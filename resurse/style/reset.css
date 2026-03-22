@@ -1,0 +1,94 @@
+
+/* spatieri */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* dimensiuni de baza */
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* titluri */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+h5, h6 { font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 0.75rem;
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+}
+
+/* bold, italic */
+b, strong { font-weight: bold; }
+i, em { font-style: italic; }
+
+/* bullets si indici */
+ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+}
+
+li { line-height: 1.6; }
+
+/* link-uri */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* tabele */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    padding: 0;
+    text-align: left;
+    font-weight: normal;
+}
+
+caption {
+    caption-side: bottom;
+}
+
+/* media */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* altele */
+figure { margin: 0; }
+p { border: none; }
