@@ -1,0 +1,389 @@
+body{
+    --culoare-fundal: #46445C;
+    --culoare-contur: #260545; 
+    --culoare-grid: #7972c8; /* culoare principala */
+    --culoare-secundara: #292346; /*culoare pentru border */
+    --culoare-text: #eae6fd; /* culoare pentru text */
+    --culoare-hover: #0b1931; /* culoare pentru hover */
+    --culoare-visited: #6C5B7B;
+    --margine-pagina: 120px;
+    background-color: var(--culoare-fundal);
+}
+
+:root {
+    --culoare-fundal: #46445C;
+    --culoare-contur: #260545; 
+    --culoare-grid: #7972c8; /* culoare principala */
+    --culoare-secundara: #292346; /*culoare pentru border */
+    --culoare-text: #eae6fd; /* culoare pentru text */
+    --culoare-hover: #0b1931; /* culoare pentru hover */
+    --culoare-visited: #6C5B7B;
+    --margine-pagina: 120px;
+    background-color: var(--culoare-fundal);
+
+    /* punctul a: spatiere stanga-dreapta paginii */
+    --spatiere-pagina: 5vw; 
+    
+    /* punctul b: gap intre celule */
+    --grid-gap: 20px;
+    
+    /* punctul d: padding egal pentru zonele de text */
+    --padding-sectiune: 25px;
+
+    /* culori pentru punctul c */
+    --culoare-bordura: rgba(255, 255, 255, 0.2);
+    --umbra-box: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --border-radius: 10px;
+}
+
+html {
+    font-size: 16px; /* marimea pe ecrane medii/mari */
+    transition: font-size 0.5s ease; /* tranzitia */
+}
+
+body{
+    color: var(--culoare-text);
+    background-color: var(--culoare-fundal);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; 
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+p, td, li {
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 1.5rem; /* ~24px */
+}
+
+p{
+    /*border: 1px solid var(--culoare-fundal); */
+    border: none;
+}
+
+main{
+    margin-left: var(--margine-pagina);
+    margin-right: var(--margine-pagina);
+}
+
+/*resetare spatiere */
+figure{
+    margin:0;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: var(--culoare-visited);
+}
+
+a:hover {
+  color: var(--culoare-hover);
+}
+
+#grid-pagina {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "welcome            welcome             welcome"
+    "evenimente         orar                anunturi-grid"
+    "online-placeholder orar                anunturi-grid"
+    "online-placeholder statistici-produse  server-placeholder"
+    "index-intrebari    index-intrebari      index-intrebari";
+    align-items: stretch;
+}
+
+#welcome            { grid-area: welcome; }
+#evenimente         { grid-area: evenimente; }
+#orar               { grid-area: orar; 
+                      overflow-x: auto; 
+                      overflow-y: visible;
+                      display: block;
+                    }
+#anunturi-grid      { grid-area: anunturi-grid; }
+#online-placeholder { grid-area: online-placeholder; }
+#statistici-produse { grid-area: statistici-produse; }
+#server-placeholder { grid-area: server-placeholder; }
+#index-intrebari    { grid-area: index-intrebari; }
+
+#grid-pagina > *{
+    border: 1px solid var(--culoare-contur);
+    background-color: var(--culoare-grid);
+    box-shadow: 0 0 5px var(--culoare-contur);
+    padding: var(--padding-sectiune);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    min-width: 0; 
+
+}
+
+.flex-video .container-iframe{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    width: 100%;
+    margin-top: 20px;
+}
+
+.flex-video .taburi-iframe{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: auto;
+    justify-content: flex-start;
+    border: 1px solid var(--culoare-contur);
+}
+
+.flex-video .taburi-iframe > a {
+    
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--culoare-fundal);
+    border: 1px solid var(--culoare-contur);
+    color: black;
+    text-decoration: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 10px;
+    border-bottom: none;
+}
+
+.flex-video .taburi-iframe > a:hover{
+    background-color: var(--culoare-contur);
+    color: white;
+}
+
+.flex-video {
+    display: flex;         
+    flex-direction: row;    /* asaza elementele unul langa altul */
+    justify-content: space-around; /* lasa spatiu egal intre cele coloane */
+    align-items: flex-end; 
+    gap: 20px;              /* adauga o distanta de 20px intre ele*/
+    flex-wrap: wrap;        /* daca ecranul e prea mic se pun una sub alta */
+    margin: 20px 0;
+}
+
+/* fortam sectiunile sa nu fie mai late de jumatate de pagina */
+.flex-video section {
+    flex: 1;                /* fiecare sectiune ocupa spatiu egal */
+    min-width: 300px;       /* latimea minima inainte sa treaca pe rand nou */
+}
+
+/* ne asiguram ca videoclipurile nu ies din coloana lor */
+.flex-video iframe {
+    max-width: 100%;   /* latime maxima */
+    min-width: 250px;  /* latime minima */
+    display: block;
+    margin: 10px auto;
+    aspect-ratio: 16 / 9; 
+    border: none;
+}
+
+img, video{
+    width: 100%;       
+    min-width: 150px;  
+    max-width: 100%;   
+    max-width: 350px; /* limita in pixeli pentru ecranele mari */
+    height: auto !important; 
+    /* centrare */
+    display: block;
+    margin: 15px auto;
+}
+
+/* regula speciala pentru jocuri */
+.coperta-joc-mica {
+    width: 150px; 
+    min-width: 100px;
+    max-width: 100% !important; 
+    height: auto !important; 
+    display: inline-block; 
+    margin: 10px;
+    vertical-align: top;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table td, table th{
+    border: 1px solid var(--culoare-secundara);
+    padding: 5px;
+    text-align: center;
+}
+
+table tbody tr:nth-child(even){
+    background-color: var(--culoare-contur);
+}
+
+.cyan{
+    background-color: var(--culoare-fundal);
+}
+
+#container-tabel {
+    overflow-x: auto; /* scrollbar orizontal doar pe container */
+}
+
+#tab-orar {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 5px inset var(--culoare-contur);
+    width: 100%;
+}
+
+caption {
+    caption-side: bottom; /* pozitionata sub tabel */
+    padding: 8px;
+}
+
+#tab-orar th,
+#tab-orar td {
+    border: 1px solid var(--culoare-contur);
+    padding: 8px 12px;
+    text-align: center;
+}
+
+#tab-orar tbody tr:nth-child(even) td{
+    border-bottom: 2px solid #c259d9; /* c1 */
+}
+
+#tab-orar tbody tr:nth-child(odd) td{
+    border-bottom: 2px solid #4dc4d8; /* c2 */
+}
+
+#tab-orar tbody tr {
+    outline: 5px solid transparent;
+    transition: outline 0.5s ease;
+}
+
+#tab-orar tbody tr:hover {
+    outline: 5px solid rgba(121, 114, 200, 0.7);
+    position: relative; 
+    z-index: 10;
+}
+
+@media screen and (max-width:700px){
+    body{
+        --margine-pagina:50px;
+    }
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    #grid-pagina{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "welcome welcome"
+                         "promotii promotii"
+                         "evenimente evenimente"
+                         "fig1 orar"
+                         "fig2 orar"
+                         "fig3 orar"
+                         "produse produse"
+                         "index-intrebari index-intrebari";
+}
+html {
+        font-size: 14px; /* pe ecrane mici textul scade cu 2px */
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    html {
+        font-size: 18px; /* pe ecrane mari textul crește cu 2px */
+    }
+}
+
+@media screen and (max-width:700px){
+    body{
+        --margine-pagina:50px;
+    }
+    #grid-pagina{
+    display: block;
+}
+
+}
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --spatiere-pagina: 3vw;
+        --grid-gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --spatiere-pagina: 10px;
+        --grid-gap: 10px;
+    }
+}
+
+#link-top {
+    /* pozitie dreapta jos */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    /* patratul rotit */
+    width: 60px;
+    height: 60px;
+    background-color: var(--culoare-secundara);
+    border: 3px solid var(--culoare-contur);
+    border-radius: 8px;
+    transform: rotate(45deg);
+
+    /* centrarea triunghiului */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+    transition: all 400ms ease;
+}
+
+#link-top:hover {
+    opacity: 1;
+    background-color: var(--culoare-hover);
+}
+
+#triunghi {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid var(--culoare-text);
+    border-radius: 10px;
+    transform: rotate(-45deg);
+    transition: all 400ms ease;
+}
+
+#link-top:hover #triunghi {
+    border-bottom-color: var(--culoare-grid);
+}
+
+ul {
+    list-style-type: disc; 
+    padding-left: 2rem;   
+    color: var(--culoare-text);
+}
+
+ol {
+    list-style-type: decimal; 
+    padding-left: 2rem;       
+}
+
+li::marker {
+    color: var(--culoare-grid); 
+    font-weight: bold;
+}

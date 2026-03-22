@@ -1,0 +1,81 @@
+nav{
+    --latime-buton: 200px;
+    --inaltime-buton: 50px;
+    background-color: var(--culoare-contur);
+}
+
+#hamburger, #ch-menu{
+    display: none;
+}
+
+ul.meniu, ul.meniu ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.text-icon, .imag-icon{
+    display: inline-block;
+}
+
+ul.meniu > ul{
+    display: flex;
+}
+
+ul.meniu li{
+    cursor: pointer;
+    font-weight: bold;
+    width: var(--latime-buton);
+    height: var(--inaltime-buton);
+    background-color: var(--culoare-grid);
+    border: 1px solid var(--culoare-contur);
+    color:black;
+    text-align: center;
+    line-height: var(--inaltime-buton);
+    transition: all 1s linear;
+}
+
+ul.meniu li:hover{
+    background-color:var(--culoare-grid);
+    color: white;
+    
+}
+ul.meniu ul{
+    display: none;
+    animation: animatie_submeniu 1s linear;
+    transform-origin: center top;
+    
+}
+
+@keyframes animatie_submeniu{
+    0% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    50%{
+        transform: scale(0.5, 1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+ul.meniu>li:hover ul{
+    display: block;
+    position: absolute;
+    z-index: 17; /* orice valoare mai mare decat 0*/
+
+}
+
+ul.meniu li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+

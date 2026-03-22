@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Spanu-Nechita">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SideQuest Supply: Magazinul tău de gaming. Console, jocuri, periferice și scaune cu livrare prin curier. Pregătește-te pentru nivelul următor!">
+    <meta name="keywords" content="jocuri, consola, SideQuest Supply, scaune, gaming, tastatura, setup, periferice, Nintendo">
+
+    <title>SideQuest Supply </title> 
+    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./resurse/ico/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="resurse/style/style.css" type="text/css"/>
+    <link rel="stylesheet" href="resurse/style/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1 id="top">SideQuest Supply <i class="fa-solid fa-gamepad"></i></h1>
+        <img src="sigla.png" alt="sigla" />\
+        <nav>
+            <ul class="meniu">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="#produse">Produse</a></li>
+                <li><a href="#trailere-gameplay">Video</a></li>
+                <li><a href="#locatie-showroom">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!--  comentariu -->
+        <div id="grid-pagina">
+
+            <section id="welcome">
+                <hgroup>
+                    <h2>Bine ati venit</h2>
+                    <p class="subtitlu">Prezentarea magazinului</p>
+                </hgroup>
+            
+                <p class="intro">Vă mulțumim că ne vizitați site-ul. </p>
+            
+                <div class="intro-oferte">
+                    <div>Console</div>
+                    <div>Jocuri</div>
+                    <div>Tastaturi</div>
+                    <div>Mouse-uri</div>
+                    <div>Accesorii gaming</div>
+                </div>
+                <p class="anunt intro">Vă puteți îmbunătăți setup-ul atât la sediul nostru fizic cu ajutorul serviciului nostru de
+                    livrare rapidă prin curier.</p>
+                <div id="dv-prezentare-1">
+                    <div id="dv-prezentare">
+                        <figure>
+                            <picture>
+                                <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                                <source srcset="./resurse/imagini/Nintendo-Switch-2-small.jpg" media="(max-width:700px)" />
+                                <source srcset="./resurse/imagini/Nintendo-Switch-2-medium.jpg" media="(max-width:1200px)" />
+                                <img src="./resurse/imagini/Nintendo-Switch-2-large.jpg" usemap="#harta-foto" alt="Consola Switch"
+                                    style="width: 100%; max-width: 800px;">
+                                
+                                <map name="harta-foto">
+                                    <area shape="circle" coords="909, 301, 36" href="./resurse/imagini/joycon.jpg" target="_blank" alt="Vezi Joy-Con">
+                                    <area shape="rect" coords="124, 264, 850, 563" href="./resurse/imagini/screen.jpg" target="_blank" alt="Vezi Ecran">
+                            </picture>
+                            <figcaption>Noul Nintendo Switch 2 - Disponibil acum la SideQuest</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section id="anunturi-grid">
+                <h2>Anunțuri</h2>
+                <ul>
+                    <li><time>15 Martie</time>: Lansare Switch 2</li>
+                    <li><time>20 Aprilie</time>: Turneu Brawl Stars</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mai multe noutăți în curând.</p>
+            </section>
+            <section id="online-placeholder">
+                <h2>Utilizatori Online</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aici va apărea lista prietenilor tăi din comunitatea
+                    SideQuest.</p>
+            </section>
+            <section id="server-placeholder">
+                <h2>Info Server</h2>
+                <dl>
+                    <dt>Status</dt>
+                    <dd>Online - Latency 15ms</dd>
+                    <dt>Locație</dt>
+                    <dd>București, RO</dd>
+                </dl>
+            </section>
+            <section id="orar">
+                <h2>Orar</h2>
+                <table id="tab-orar">
+                    <caption>Program de lucru SideQuest Supply</caption>
+                    <thead>
+            
+                        <tr>
+                            <th>Cod</th>
+                            <th>Perioadă</th>
+                            <th>Zi</th>
+                            <th>Interval dimineata</th>
+                            <th>Pauza de masa</th>
+                            <th>Interval seară</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td rowspan="5" class="cyan">Zile<br />Lucrătoare</td>
+                            <td>Luni</td>
+                            <td>8-12</td>
+                            <td>12-14</td>
+                            <td>14-18</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+            
+                            <td>Marti</td>
+                            <td>8-12</td>
+                            <td>12-14</td>
+                            <td>14-18</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+            
+                            <td>Miercuri</td>
+                            <td>8-12</td>
+                            <td>12-14</td>
+                            <td>14-18</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+            
+                            <td>Joi</td>
+                            <td>8-12</td>
+                            <td>12-14</td>
+                            <td>14-18</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+            
+                            <td>Vineri</td>
+                            <td>8-12</td>
+                            <td>12-13</td>
+                            <td>13-17</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td rowspan="2" class="cyan">Weekend</td>
+                            <td>Sambata</td>
+                            <td>10-12</td>
+                            <td>12-13</td>
+                            <td>13-17</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Duminica</td>
+                            <td>10-16</td>
+                            <td>-</td>
+                            <td>inchis</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">Închis cu ocazia sărbătorilor legale.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
+            </section>
+            <section id="statistici-produse">
+                <h2>Disponibilitate și Popularitate</h2>
+            
+                <p>
+                    Stoc PlayStation 5 Digital Edition:
+                    <meter min="0" max="100" value="8" low="20" high="80" optimum="100" title="Unități în stoc">
+                        8 din 500
+                    </meter>
+                    <span> (Stoc critic! Mai sunt doar 8 unități)</span>
+                </p>
+            
+                <p>
+                    Grad de satisfacție clienți (Review-uri pozitive):
+                    <meter min="0" max="10" value="9.5" low="4" high="8.5" optimum="10" title="Notă din 10">
+                        9.5 din 10
+                    </meter>
+                    <span> (Rating excelent bazat pe ultimele 50 de achiziții)</span>
+                </p>
+            </section>
+            <section id="evenimente">
+                <h2 class="fg-img">Evenimente</h2>
+
+                <ul>
+                    <li>
+                        <time datetime="2026-03-15T10:00">15 Martie, ora 10:00</time>:
+                        <b>Lansare Consola Switch 2</b> - Fii printre primii care testează noua consolă în magazinul nostru. Oferim
+                        accesorii cadou primilor 10 cumpărători!
+                    </li>
+                
+                    <li>
+                        <time datetime="2026-04-20T18:00">20 Aprilie, ora 18:00</time>:
+                        <b>Turneu de Brawl Stars</b> - Te așteptăm la sediul nostru pentru cel mai mare turneu local. Marele premiu este un
+                        scaun de gaming de ultimă generație.
+                    </li>
+
+                    <li>
+                        <time datetime="2026-06-01T09:00">1 Iunie, ora 09:00</time>:
+                        <b>Summer Gaming Sale</b> - Reduceri masive de până la 50% la toate jocurile pentru PlayStation și Xbox. Stoc
+                        limitat!
+                    </li>
+
+                    <li>
+                        <time datetime="2026-07-10T12:00">10 Iulie, ora 12:00</time>,
+                        <b>Workshop Periferice</b> - Vino să înveți cum să îți cureți și să îți întreții tastatura mecanică și mouse-ul
+                        pentru o performanță optimă.
+                    </li>
+                </ul>
+
+            </section>
+            <section id="index-intrebari">
+                <h2>Întrebări frecvente</h2>
+            
+                <details>
+                    <summary>Consolele vândute sunt noi și beneficiază de garanție oficială?</summary>
+                    <p>Da, toate produsele noastre (PlayStation, Xbox, Nintendo) sunt sigilate și vin însoțite de garanția
+                        producătorului de 24 de luni.</p>
+                </details>
+            
+                <details>
+                    <summary>Cum funcționează sistemul de precomandă pentru titlurile noi?</summary>
+                    <p>Precomanda îți rezervă o unitate din stocul limitat. Livrarea se face prin curier chiar în ziua lansării
+                        oficiale a jocului.</p>
+                </details>
+            
+                <details>
+                    <summary>Scaunele de gaming necesită montaj specializat?</summary>
+                    <p>Scaunele vin dezasamblate pentru protecție la transport, dar pachetul include instrucțiuni detaliate și toate
+                        uneltele necesare pentru un montaj rapid de maximum 15 minute.</p>
+                </details>
+            
+                <details>
+                    <summary>Pot returna un joc dacă am desfăcut sigiliul carcasei?</summary>
+                    <p>Conform politicilor de copyright și a termenilor noștri, jocurile video pot fi returnate doar dacă sigiliul
+                        original este intact, pentru a preveni copierea datelor.</p>
+                </details>
+            
+                <details>
+                    <summary>Asigurați livrare prin curier în toată țara?</summary>
+                    <p>Da, colaborăm cu principalele firme de curierat pentru a asigura livrarea în 24-48 de ore, oriunde în
+                        România.</p>
+                </details>
+
+                <details>
+                    <summary>Cum pot sa fac retur la un joc?</summary>
+                    <p>In termen de 30 de zile trebuie sa ne contactati. Pentru mai multe detalii cititi pdf-ul de mai jos.
+                    </p>
+                    <embed src="resurse/garantie.pdf" type="application/pdf" width="400" height="300" />
+                </details>
+            </section>
+
+        </div>
+        <section id="promotii">
+                <h2>Promoții</h2>
+            
+                <article>
+                    <h3 class="titlu">Super oferta de Weekend</h3>
+                    <p>
+                        <b>SideQuest Supply</b> oferă <b>reduceri de <s>10%</s> <ins>20%</ins></b> pentru toate accesoriile
+                        profesionale cumpărate în intervalul „pauzei de masă” (12:00-14:00).
+                    </p>
+                    <p>
+                        Oferta este valabilă doar sâmbăta și duminica la sediile <abbr title="SideQuest Supply">SQS</abbr>.
+                    </p>
+                    <p>
+                        În cazul în care cumpărați mai mult de trei <b>jocuri de colecție</b> primiți și un card de <i>respawn</i>
+                        (garanție extinsă pentru produse)!
+                    </p>
+                </article>
+            
+                <article>
+                    <h3>Pachetul „Gamer Starter Kit”</h3>
+                    <p>Magazinul nostru oferă pachete de supraviețuire digitală cuprinzând:</p>
+                    <ol>
+                        <li><i lang="en">Mechanical Keyboard</i> cu switch-uri silențioase</li>
+                        <li>Un set de 4 taste (keycaps) personalizate</li>
+                        <li>Un mouse pad de dimensiuni extinse</li>
+                        <li>Gratis: o figurină cu eroul tău preferat</li>
+                        <li>Gratis: un cod de reducere pentru următoarea comanda</li>
+                    </ol>
+                </article>
+            
+                <article>
+                    <h3>Echipamente „Bântuite” de Halloween</h3>
+                    <p>Punem suflet în perifericele noastre... la propriu!</p>
+                    <p>Chiar dacă nu e încă Halloween, avem componente bântuite care îți vor da fiori în timp ce te joci:</p>
+                    <ol>
+                        <li>Când încerci să faci un <i>headshot</i>, mouse-ul începe să râdă malefic și îți mișcă ținta singur.</li>
+                        <li>Căștile vor reda sunete de pași în spatele tău chiar și când joci un simulator de fermă. Ați fost
+                            avertizați!</li>
+                    </ol>
+                </article>
+            
+                <article>
+                    <h3>Rezoluții (de ecran) de Anul Nou</h3>
+                    <p>
+                        La începutul fiecărui an îți promiți că vei juca mai puțin, că vei merge la sală și că nu vei mai da banii
+                        pe skin-uri inutile. Știm cu toții că e doar o eroare de sistem. Mai bine cumpără-ți o placă video nouă;
+                        măcar așa vei vedea cum plângi după banii tăi în rezoluție <abbr title="Ultra High Definition">UHD</abbr> la
+                        144 FPS.
+                    </p>
+                </article>
+            </section>
+        <section id="produse">
+                <h2>Catalogul de Echipamente</h2>
+                <p>Vă oferim cele mai noi tehnologii pentru a vă îmbunătăți performanța în orice tip de joc.</p>
+            
+                <section>
+                    <h3>Console</h3>
+                    <p>Avem disponibile cele mai noi platforme de gaming, gata de acțiune imediat ce le scoateți din cutie.</p>
+                    <p>Disponibile în stoc:</p>
+                    <ul>
+                        <li>PlayStation 5 Digital Edition</li>
+                        <li>PlayStation 5 Slim (cu unitate disc)</li>
+                        <li>Xbox Series X</li>
+                        <li>Xbox Series S</li>
+                        <li>Nintendo Switch OLED</li>
+                    </ul>
+                </section>
+            
+                <section>
+                    <h3>Periferice de Gaming</h3>
+                    <p>Controlul precis face diferența între un <i>win</i> și un <i>respawn</i>. Alege echipamentul potrivit!</p>
+                    <p>Categorii disponibile:</p>
+                    <ul>
+                        <li>Tastaturi mecanice</li>
+                        <li>Mouse-uri cu senzor de mare precizie</li>
+                        <li>Căști cu microfon noise-cancelling</li>
+                        <li>Controllere wireless DualSense și Xbox Elite</li>
+                        <li>Mousepad-uri textile de dimensiuni extinse</li>
+                        <li>Scaune ergonomice cu suport lombar</li>
+                    </ul>
+                </section>
+            
+                <section>
+                    <h3>Componente Hardware</h3>
+                    <p>Dacă preferi să-ți construiești propriul setup de gaming avem piesele necesare:</p>
+                    <ul>
+                        <li>Plăci video</li>
+                        <li>Procesoare de ultimă generație (Intel i9 și Ryzen 9)</li>
+                        <li>Memorii RAM de mare viteză</li>
+                        <li>Unități de stocare SSD</li>
+                        <li>Surse de alimentare cu certificare</li>
+                        <li>Sisteme de răcire</li>
+                    </ul>
+                </section>
+            </section>
+        <section id="detalii-produs">
+                <h2>Detalii produse</h2>
+            
+                <h3>Nintendo Switch OLED</h3>
+            
+                <p>Noua consola Nintendo Switch OLED ofera culori vibrante și un contrast puternic pentru o experienta de gaming
+                    portabila de neuitat.</p>
+            
+                <p>
+                    <strong>Atenție! Stocul pentru noile console este extrem de limitat și se epuizează rapid.</strong>
+                </p>
+            
+                <dl>
+                    <dt>Ecran</dt>
+                    <dd>7-inch OLED multi-touch</dd>
+                    <dt>Memorie</dt>
+                    <dd>64 GB stocare interna</dd>
+                </dl>
+            
+                <figure>
+            
+                    <picture>
+                        <source media="(min-width: 1025px)"
+                            srcset="resurse/imagini/Consola-Nintendo-Switch-OLED_f3f6c384-large.jpg">
+            
+                        <source media="(min-width: 768px)" srcset="resurse/imagini/Consola-Nintendo-Switch-OLED_f3f6c384-small.jpg">
+            
+                        <img src="resurse/imagini/Consola-Nintendo-Switch-OLED_f3f6c384.jpg"
+                            alt="Consola Nintendo Switch OLED în mod portabil"
+                            title="Nintendo Switch OLED: Pregătită pentru nivelul următor!" width="400" height="300" loading="lazy">
+                    </picture>
+            
+                    <figure>
+                        <a href="resurse/imagini/Culture_Games_NintendoSwitchOLEDmodel_02-large.jpg">
+                            <img src="resurse/imagini/Culture_Games_NintendoSwitchOLEDmodel_02-small.jpg" alt="Click pentru mărire"
+                                style="width:200px;">
+                        </a>
+                        <figcaption>Click pe imagine pentru a vedea varianta la rezoluție maximă.</figcaption>
+                    </figure>
+            
+                    <figcaption>
+                        Consola Nintendo Switch OLED prezentată în varianta de culoare 'White', evidențiind ecranul OLED mai mare
+                        și controllerele Joy-Con îmbunătățite.
+                    </figcaption>
+                </figure>
+            
+                <p>Pentru a fi la curent cu ultimele știri oficiale, vizitați site-ul
+                    <a href="https://www.nintendo.com" target="_blank">Nintendo Official</a>.
+                </p>
+            
+            
+                <h3>PlayStation 5 (PS5) Digital Edition</h3>
+            
+                <p>Noua consolă PlayStation 5 revoluționează experiența de gaming prin viteza uluitoare a SSD-ului ultra-rapid și
+                    imersiunea oferită de tehnologia haptică a controllerului DualSense.</p>
+            
+                <p>
+                    <strong>Atenție! Stocul pentru noile console este extrem de limitat și se epuizează rapid.</strong>
+                </p>
+            
+                <dl>
+                    <dt>Performanță</dt>
+                    <dd>Suport 4K la 120 FPS și tehnologie Ray Tracing</dd>
+                    <dt>Stocare</dt>
+                    <dd>825 GB SSD Personalizat ultra-rapid</dd>
+                    <dt>Sunet</dt>
+                    <dd>Tehnologie audio 3D Tempest</dd>
+                </dl>
+            
+                <p>Specificațiile detaliate ale procesorului pot fi găsite aici:
+                    <a href="https://www.techpowerup.com/gpu-specs/sony-playstation-5-gpu.c3480#specs">
+                        https://www.tech<wbr>powerup.com<wbr>/gpu-specs<wbr>/sony-playstation<wbr>-5-gpu<wbr>.c3480#specs
+                    </a>
+                </p>
+            
+                <figure>
+                    <picture>
+                        <source media="(min-width: 1025px)" srcset="resurse/imagini/Ps5-models-large.jpg">
+            
+                        <source media="(min-width: 768px)" srcset="resurse/imagini/Ps5-models-small.jpg">
+            
+                        <img src="resurse/imagini/Ps5-models-extrasmall.jpg" alt="Consola PlayStation 5 cu controller DualSense"
+                            title="PlayStation 5: Play Has No Limits!" width="400" height="300" loading="lazy">
+                    </picture>
+            
+                    <figcaption>
+                        Consola PlayStation 5 prezentată în varianta albă, evidențiind designul futurist și noul controller
+                        DualSense cu
+                        feedback haptic.
+                    </figcaption>
+                </figure>
+            
+                <p>Pentru a fi la curent cu ultimele știri oficiale și lansări de titluri exclusive, vizitați site-ul
+                    <a href="https://www.playstation.com" target="_blank">PlayStation Official</a>.
+                </p>
+            
+            
+            </section>
+        <section id="articole-disponibile">
+            <h2>Jocuri disponibile</h2>
+            <div id="grid-articole">
+                <figure>
+                    <div>
+                <img src="resurse/imagini/botw.jpg" alt="joc" class="coperta-joc-mica"></div>
+                <figcaption>The Legend of Zelda: Breath of the Wild</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/jojo.jpg" alt="joc" class="coperta-joc-mica"class="coperta-joc-mica">
+                <figcaption>JoJo's Bizarre Adventure: All-Star Battle R</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/little_nightmares.jpg" alt="joc" class="coperta-joc-mica">
+                <figcaption>Little Nightmares 1 & 2</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/mario_kart.jpg" alt="joc" class="coperta-joc-mica">
+                <figcaption>Mario Kart</figcaption>
+                </figure>
+                <figure>
+                <img src="resurse/imagini/hyrule.jpg" alt="joc" class="coperta-joc-mica">
+                <figcaption>Hyrule Warriors: Age of Imprisonment</figcaption>
+                </figure>
+            
+            </div>
+        </section>
+        <section id="resurse-utile">
+            <h2>Zona de Download</h2>
+            <p>Descarcă noul nostru wallpaper oficial pentru setup-ul tău:</p>
+        
+            <a href="resurse/imagini/poza.jpeg" download="poza_descarcata.jpeg">
+                Descarcă Wallpaper Oficial
+            </a>
+        </section>
+        <div class="flex-video">
+            <section id="trailere-gameplay">
+                <h2>Trailere și Gameplay</h2>
+                <p>
+                    Vă invităm să explorați secțiunea noastră de conținut multimedia pentru a vedea performanța
+                    hardware-ului în timp real. Vizionați trailerele oficiale și secvențele de gameplay pentru a
+                    vă asigura că faceți alegerea <s>corectă</s> perfectă pentru setup-ul dumneavoastră. &#128513;
+                </p>
+                <br>
+                    <div class="container-iframe">
+                        <div class="taburi-iframe">
+                            <a href="https://www.youtube.com/embed/uHGShqcAHlQ?si=C1ioLxCvdGaA7-g4" target="ifr-video">The Legend of
+                                Zelda: TOTK</a>
+                            <a href="https://www.youtube.com/embed/zw47_q9wbBE?si=JJ_VcLCsdm-a21YQ" target="ifr-video">The Legend of
+                            Zelda: BOTW</a>
+                            <a href="https://www.youtube.com/embed/ohClxMmNLQQ?si=mH6YhyS8VpY-eHtU" target="ifr-video">It Takes
+                            Two</a><br />
+                        </div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/r7qozxgX4c8?si=4qjLRGHO_74twS0w"
+                            name="ifr-video" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+
+            </section>
+            <section id="bonus-playlist">
+                <h2>Recenzii Jocuri</h2>
+                <p>Vă prezentăm o selecție de recenzii obiective pentru a vedea cum se comportă cele mai noi titluri pe hardware-ul nostru.
+                Analizați aceste opinii pentru a înțelege de ce produsele SideQuest sunt <s>apreciate</s> esențiale pentru orice gamer.
+                Sperăm ca aceste experiențe să vă ajute să faceți alegerea ideală!</p>
+                <br>
+                <br>
+                <br>
+                <div class="container-iframe">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/videoseries?list=PLty7kx5zzes9KlG4fTVGHp4-pvx2m5DUj&loop=1&playlist=PLty7kx5zzes9KlG4fTVGHp4-pvx2m5DUj&controls=1"
+                        title="YouTube playlist player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+        </div>
+        <section id="calcul-pret">
+    <hr>
+    <h3>Cum calculăm reducerile SideQuest Supply?</h3>
+    <p>
+        Transparența este importantă pentru noi. Fiecare reducere de fidelitate
+        este aplicată automat conform următoarei formule matematice:
+    </p>
+
+    <div style="padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 8px;">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mstyle mathcolor="#c259d9" mathsize="1.4em">
+                <msub>
+                    <mi mathvariant="bold">P</mi>
+                    <mi mathsize="0.7em">final</mi>
+                </msub>
+            </mstyle>
+
+            <mo mathcolor="#eae6fd" mathsize="1.2em">=</mo>
+
+            <mstyle mathcolor="#4dc4d8">
+                <msub>
+                    <mi mathvariant="italic">P</mi>
+                    <mi mathsize="0.7em">listă</mi>
+                </msub>
+            </mstyle>
+
+            <mo mathcolor="#eae6fd" mathsize="1.2em">-</mo>
+
+            <mfenced>
+                <mrow>
+                    <mstyle mathcolor="#4dc4d8">
+                        <msub>
+                            <mi mathvariant="italic">P</mi>
+                            <mi mathsize="0.7em">listă</mi>
+                        </msub>
+                    </mstyle>
+
+                    <mo mathcolor="#eae6fd">·</mo>
+            <mfrac>
+                <mstyle mathcolor="#f4a261" mathsize="0.95em">
+                    <mtext style="font-style: italic; font-weight: bold;">reducere</mtext>
+                </mstyle>
+                <mstyle mathcolor="#eae6fd" mathsize="0.9em">
+                    <mn>100</mn>
+                </mstyle>
+            </mfrac>
+                </mrow>
+            </mfenced>
+        </math>
+    </div>
+
+    <p>
+        Unde <b>P<sub>final</sub></b> este prețul pe care îl plătești, iar
+        <b>reducere</b> reprezintă procentul aplicat în campania curentă.
+    </p>
+</section>
+
+    </main>
+
+    <footer>
+        <section id="locatie-showroom">
+            <h3>Unde ne găsești (Showroom SideQuest Supply)</h3>
+            <p>Suntem situați chiar în incinta la locatia:</p>
+        
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8865486221102!2d26.097035012232425!3d44.43548937095513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f13898f%3A0xa3200754144a01ba!2sStrada%20Academiei%2014%2C%20010014%20Bucure%C8%99ti!5e0!3m2!1sen!2sro!4v1772747281485!5m2!1sen!2sro"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <address>
+        Magazinul SideQuest Supply,<br>
+        <a href="https://maps.app.goo.gl/qVF7RVXjhEjUe64Q8" target="_blank">
+            Strada Academiei, Nr. 14,<br>
+            București, Sector 1, România
+        </a>
+        <br><br>
+        E-mail suport: <a href="mailto:contact@sidequest-supply.ro">contact@sidequest-supply.ro</a>
+        <br>
+        Telefon: <a href="tel:+40722123456">+40 722 123 456</a>
+        <br>
+        Chat Live: <a href="https://wa.me/40722123456" target="_blank">WhatsApp SideQuest</a>
+        <br><br>
+        <a href="#" id="link-top" title="Mergi la începutul paginii">
+            <div id="triunghi"></div>
+        </a>
+        <br>
+        </address> 
+        <small>
+        &copy; 2026 SideQuest Supply. Toate drepturile rezervate. 
+        <br>
+        Pagina a fost creată la data de 
+        <time datetime="2025-02-02">2 februarie 2025</time>.
+    </small>
+    </footer>
+</body>
+
+</html>
