@@ -129,6 +129,25 @@ a:hover {
 
 }
 
+header h1{
+    display: block;
+    /* margin-bottom: 0;
+    margin-top: 0; */
+    padding-bottom: 0;
+    padding-top: 0;
+    align-self: left;
+
+}
+
+.master-sword {
+    display: block;
+    margin-left: 0;
+    margin-top: -130px;
+    margin-bottom: -120px;
+    padding-left: 20px;
+    align-self: left;
+}
+
 .flex-video .container-iframe{
     display: flex;
     flex-direction: column;
@@ -236,6 +255,7 @@ table tbody tr:nth-child(even){
     overflow-x: auto; /* scrollbar orizontal doar pe container */
 }
 
+
 #tab-orar {
     border-collapse: collapse;
     border-spacing: 0;
@@ -274,34 +294,50 @@ caption {
     z-index: 10;
 }
 
-@media screen and (max-width:700px){
-    body{
-        --margine-pagina:50px;
+@media screen and (max-width: 700px) {
+    body {
+        /* Reducem marginea ca să avem spațiu pe ecrane înguste */
+        --margine-pagina: 1.25rem; /* 20px */
     }
+
+    main {
+        margin-left: var(--margine-pagina);
+        margin-right: var(--margine-pagina);
+    }
+
     * {
         animation: none !important;
         transition: none !important;
     }
-    #grid-pagina{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "welcome welcome"
-                         "promotii promotii"
-                         "evenimente evenimente"
-                         "fig1 orar"
-                         "fig2 orar"
-                         "fig3 orar"
-                         "produse produse"
-                         "index-intrebari index-intrebari";
-}
-html {
-        font-size: 14px; /* pe ecrane mici textul scade cu 2px */
+
+    #grid-pagina {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "welcome"
+            "evenimente"
+            "orar"
+            "anunturi-grid"
+            "online-placeholder"
+            "statistici-produse"
+            "server-placeholder"
+            "index-intrebari";
+        gap: 1rem;
+    }
+
+    #orar {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    html {
+        font-size: 14px; 
     }
 }
 
 @media screen and (min-width: 1600px) {
     html {
-        font-size: 18px; /* pe ecrane mari textul crește cu 2px */
+        font-size: 18px; 
     }
 }
 

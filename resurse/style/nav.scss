@@ -1,0 +1,177 @@
+// variabile sass
+$font-meniu: 'Orbitron', sans-serif;
+$durata-tranzitie: 0.6s;
+$latime-gradient: 200%;
+
+
+// 3. bloc de cod similar cu @extend
+%stil-link-baza {
+    display: block;
+    text-decoration: none;
+    font-family: $font-meniu;
+    color: var(--culoare-text);
+    transition: all $durata-tranzitie ease;
+}      
+
+#ch-menu {
+    display: none; 
+}
+
+#hamburger {
+    display: none; 
+}
+
+// meniu
+nav {
+    background-color: var(--culoare-secundara);
+
+    ul.meniu {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            position: relative;
+
+            > a {
+                @extend %stil-link-baza;
+                padding: 1rem 1.5rem;
+                font-weight: bold;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: $latime-gradient;
+                    height: 5px;
+                    background: linear-gradient(
+                        to right,
+                        var(--culoare-secundara),
+                        var(--culoare-grid)
+                    );
+                    transform: translateX(50%);
+                    transition: transform $durata-tranzitie ease;
+                }
+
+                &:hover::before {
+                    transform: translateX(0%);
+                }
+
+                &:hover {
+                    color: var(--culoare-text);
+                }
+            }
+
+            // submeniu
+            ul.submeniu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                background-color: var(--culoare-fundal);
+                min-width: 180px;
+                transform: scaleY(0);
+                transform-origin: center center;
+                transition: transform $durata-tranzitie ease;
+
+                li {
+                    a {
+                        display: block;
+                        padding: 0.75rem 1.5rem;
+                        color: var(--culoare-text);
+                        text-decoration: none;
+                        font-family: $font-meniu;
+                        transition: 
+                            background-color $durata-tranzitie ease,
+                            color $durata-tranzitie ease;
+
+                        &:hover {
+                            background-color: var(--culoare-hover);
+                            color: var(--culoare-text);
+                        }
+                    }
+                }
+            }
+
+            &:hover ul.submeniu {
+                transform: scaleY(1);
+            }
+        }
+    }
+}
+
+/* ecran mediu */
+@media screen and (max-width: 62.5em) {
+    nav ul.meniu li a {
+        .text-meniu {
+            display: none;
+        }
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    nav ul.meniu li {
+        width: auto;
+        padding: 0 0.5rem;
+    }
+}
+
+/* ecran mic */
+@media screen and (max-width: 43.75em) {
+    
+    // perspectiva 3D
+    nav {
+        perspective: 1000px !important;
+        position: relative !important;
+    }
+
+    #hamburger {
+        display: block !important;
+        z-index: 1001;
+    }
+
+    body nav ul.meniu {
+        display: none; // ascuns complet
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--culoare-secundara);
+        z-index: 1000;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        transform-origin: top left; // balamaua de sus
+    }
+
+    // declansatorul
+    body nav #ch-menu:checked ~ ul.meniu {
+        display: flex !important; 
+        // Forțăm animația să ruleze
+        animation: deschideTrapa 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+    }
+}
+
+/* animatia */
+@keyframes deschideTrapa {
+    0% {
+        opacity: 0;
+        transform: rotate(-15deg) translateY(-30px);
+        transform-origin: top left;
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) translateY(0px);
+        transform-origin: top left;
+    }
+}

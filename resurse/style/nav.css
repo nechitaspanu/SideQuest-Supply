@@ -1,81 +1,138 @@
-nav{
-    --latime-buton: 200px;
-    --inaltime-buton: 50px;
-    background-color: var(--culoare-contur);
+nav ul.meniu > li > a {
+  display: block;
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  color: var(--culoare-text);
+  transition: all 0.6s ease;
 }
 
-#hamburger, #ch-menu{
+#ch-menu {
+  display: none;
+}
+
+#hamburger {
+  display: none;
+}
+
+nav {
+  background-color: var(--culoare-secundara);
+}
+nav ul.meniu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul.meniu > li {
+  position: relative;
+}
+nav ul.meniu > li > a {
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+nav ul.meniu > li > a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 5px;
+  background: linear-gradient(to right, var(--culoare-secundara), var(--culoare-grid));
+  transform: translateX(50%);
+  transition: transform 0.6s ease;
+}
+nav ul.meniu > li > a:hover::before {
+  transform: translateX(0%);
+}
+nav ul.meniu > li > a:hover {
+  color: var(--culoare-text);
+}
+nav ul.meniu > li ul.submeniu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--culoare-fundal);
+  min-width: 180px;
+  transform: scaleY(0);
+  transform-origin: center center;
+  transition: transform 0.6s ease;
+}
+nav ul.meniu > li ul.submeniu li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--culoare-text);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+nav ul.meniu > li ul.submeniu li a:hover {
+  background-color: var(--culoare-hover);
+  color: var(--culoare-text);
+}
+nav ul.meniu > li:hover ul.submeniu {
+  transform: scaleY(1);
+}
+
+/* ecran mediu */
+@media screen and (max-width: 62.5em) {
+  nav ul.meniu li a .text-meniu {
     display: none;
+  }
+  nav ul.meniu li a i {
+    font-size: 1.2rem;
+  }
+  nav ul.meniu li {
+    width: auto;
+    padding: 0 0.5rem;
+  }
 }
-
-ul.meniu, ul.meniu ul{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    justify-content: flex-start;
-}
-
-.text-icon, .imag-icon{
-    display: inline-block;
-}
-
-ul.meniu > ul{
-    display: flex;
-}
-
-ul.meniu li{
-    cursor: pointer;
-    font-weight: bold;
-    width: var(--latime-buton);
-    height: var(--inaltime-buton);
-    background-color: var(--culoare-grid);
-    border: 1px solid var(--culoare-contur);
-    color:black;
-    text-align: center;
-    line-height: var(--inaltime-buton);
-    transition: all 1s linear;
-}
-
-ul.meniu li:hover{
-    background-color:var(--culoare-grid);
-    color: white;
-    
-}
-ul.meniu ul{
+/* ecran mic */
+@media screen and (max-width: 43.75em) {
+  nav {
+    perspective: 1000px !important;
+    position: relative !important;
+  }
+  #hamburger {
+    display: block !important;
+    z-index: 1001;
+  }
+  body nav ul.meniu {
     display: none;
-    animation: animatie_submeniu 1s linear;
-    transform-origin: center top;
-    
-}
-
-@keyframes animatie_submeniu{
-    0% {
-        opacity: 0;
-        transform: scale(0, 0);
-    }
-    50%{
-        transform: scale(0.5, 1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1, 1);
-    }
-}
-
-ul.meniu>li:hover ul{
-    display: block;
+    flex-direction: column;
     position: absolute;
-    z-index: 17; /* orice valoare mai mare decat 0*/
-
-}
-
-ul.meniu li a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    background-color: var(--culoare-secundara);
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform-origin: top left;
+  }
+  body nav #ch-menu:checked ~ ul.meniu {
+    display: flex !important;
+    animation: deschideTrapa 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+  }
+}
+/* animatia */
+@keyframes deschideTrapa {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg) translateY(-30px);
+    transform-origin: top left;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0px);
+    transform-origin: top left;
+  }
 }
 
+/*# sourceMappingURL=nav.css.map */

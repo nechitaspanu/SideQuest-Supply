@@ -1,0 +1,97 @@
+@media print {
+
+   /* normal ascuns */
+    #banner {
+        display: none;
+    }
+    
+    /* la print apare sus */
+    #banner {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        border: 1px dotted black;
+        color: black;
+    }
+
+    /* imagini, video, ifrae ascunse */
+    img, video, iframe, figure, figcaption,
+    .flex-video, #link-top {
+        display: none !important;
+    }
+
+    /* gridul devine block */
+    #grid-pagina {
+        display: block !important;
+    }
+
+    /* linkurile apar ca text normal */
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    /* h1 */
+    h1 {
+        text-align: center;
+        font-size: 2.5rem; /* 2.5 ori mai mare decat html (16px) */
+        text-decoration: underline;
+        page-break-after: always; /* page break dupa h1 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* centrat vertical pe prima pagina */
+    }
+
+    nav {
+        display: none !important;
+    }
+
+    /* page break inainte de footer */
+    footer {
+        page-break-before: always;
+    }
+
+    body::before {
+        content: "Spanu Nechita";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 100px;
+        height: 2cm;
+        border: double black 3px;
+        opacity: 0.65;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* watermark */
+   /* @page {
+        @top-center {
+            content: "Spanu Nechita";
+            width: 100px;
+            height: 2cm;
+            border: double black 3px;
+            opacity: 0.65;
+        }
+    } */
+
+    /* margini diferite */
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+
+    @page :right {
+        margin-right: 2.5cm;
+        margin-left: 0.5cm;
+    }
+}

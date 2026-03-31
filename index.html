@@ -16,9 +16,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="resurse/style/reset.css" type="text/css"/>
-    <link rel="stylesheet" href="resurse/style/style.css" type="text/css"/>
-    <link rel="stylesheet" href="resurse/style/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="resurse/style/reset.css" type="text/css" />
+    <link rel="stylesheet" href="resurse/style/style.css" type="text/css" />
+    <link rel="stylesheet" href="resurse/style/nav.css" type="text/css" />
+    <link rel="stylesheet" href="resurse/style/print.css" media="print">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,23 +30,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+
+
 </head>
 
 <body>
     <header>
         <h1 id="top">SideQuest Supply <i class="fa-solid fa-gamepad"></i></h1>
-        <img src="resurse/imagini/sigla.png" alt="sigla" />
-        <nav>
-            <ul class="meniu">
-                <li><a href="index.html">Acasă</a></li>
-                <li><a href="#produse">Produse</a></li>
-                <li><a href="#trailere-gameplay">Video</a></li>
-                <li><a href="#locatie-showroom">Contact</a></li>
-            </ul>
-        </nav>
+        <img src="resurse/imagini/sigla.png" alt="sigla" class="master-sword"/>
+    <nav>
+        <input type="checkbox" id="ch-menu">
+        <label id="hamburger" for="ch-menu">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <ul class="meniu">
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="text-meniu">Acasă</span>
+                </a>
+            </li>
+            <li class="has-submeniu">
+                <a href="#produse">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="text-meniu">Produse</span>
+                </a>
+                <ul class="submeniu">
+                    <li><a href="#produse">Catalog</a></li>
+                    <li><a href="#detalii-produs">Detalii Produse</a></li>
+                    <li><a href="#articole-disponibile">Jocuri</a></li>
+                </ul>
+            </li>
+            <li class="has-submeniu">
+                <a href="#trailere-gameplay">
+                    <i class="fa-solid fa-video"></i>
+                    <span class="text-meniu">Video</span>
+                </a>
+                <ul class="submeniu">
+                    <li><a href="#trailere-gameplay">Trailere Oficiale</a></li>
+                    <li><a href="#review-hardware">Review Hardware</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#locatie-showroom">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <span class="text-meniu">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     </header>
 
-    <main> <!--  comentariu -->
+    <main> 
         <div id="grid-pagina">
 
             <section id="welcome">
@@ -69,7 +105,6 @@
                     <div id="dv-prezentare">
                         <figure>
                             <picture>
-                                <!-- il ia pe primul care se potriveste cu query-ul din media-->
                                 <source srcset="./resurse/imagini/Nintendo-Switch-2-small.jpg" media="(max-width:700px)" />
                                 <source srcset="./resurse/imagini/Nintendo-Switch-2-medium.jpg" media="(max-width:1200px)" />
                                 <img src="./resurse/imagini/Nintendo-Switch-2-large.jpg" usemap="#harta-foto" alt="Consola Switch"
@@ -87,8 +122,8 @@
             <section id="anunturi-grid">
                 <h2>Anunțuri</h2>
                 <ul>
-                    <li><time>15 Martie</time>: Lansare Switch 2</li>
-                    <li><time>20 Aprilie</time>: Turneu Brawl Stars</li>
+                    <li><time datetime="2026-03-15">15 Martie</time>: Lansare Switch 2</li>
+                    <li><time datetime="2026-04-20">20 Aprilie</time>: Turneu Brawl Stars</li>
                 </ul>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mai multe noutăți în curând.</p>
             </section>
@@ -184,7 +219,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
+                <p><strong>Atentie!!!</strong> In prima zi a lunii facem inventar.</p>
             </section>
             <section id="statistici-produse">
                 <h2>Disponibilitate și Popularitate</h2>
@@ -479,7 +514,7 @@
                 <figcaption>The Legend of Zelda: Breath of the Wild</figcaption>
                 </figure>
                 <figure>
-                <img src="resurse/imagini/jojo.jpg" alt="joc" class="coperta-joc-mica"class="coperta-joc-mica">
+                <img src="resurse/imagini/jojo.jpg" alt="joc" class="coperta-joc-mica">
                 <figcaption>JoJo's Bizarre Adventure: All-Star Battle R</figcaption>
                 </figure>
                 <figure>
@@ -526,7 +561,7 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/r7qozxgX4c8?si=4qjLRGHO_74twS0w"
                             name="ifr-video" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                           >
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
                     </div>
 
@@ -550,67 +585,68 @@
             </section>
         </div>
         <section id="calcul-pret">
-    <hr>
-    <h3>Cum calculăm reducerile SideQuest Supply?</h3>
-    <p>
-        Transparența este importantă pentru noi. Fiecare reducere de fidelitate
-        este aplicată automat conform următoarei formule matematice:
-    </p>
-
-    <div style="padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 8px;">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-            <mstyle mathcolor="#c259d9" mathsize="1.4em">
-                <msub>
-                    <mi mathvariant="bold">P</mi>
-                    <mi mathsize="0.7em">final</mi>
-                </msub>
-            </mstyle>
-
-            <mo mathcolor="#eae6fd" mathsize="1.2em">=</mo>
-
-            <mstyle mathcolor="#4dc4d8">
-                <msub>
-                    <mi mathvariant="italic">P</mi>
-                    <mi mathsize="0.7em">listă</mi>
-                </msub>
-            </mstyle>
-
-            <mo mathcolor="#eae6fd" mathsize="1.2em">-</mo>
-
-            <mfenced>
-                <mrow>
+            <hr>
+            <h3>Cum calculăm reducerile SideQuest Supply?</h3>
+            <p>
+                Transparența este importantă pentru noi. Fiecare reducere de fidelitate
+                este aplicată automat conform următoarei formule matematice:
+            </p>
+        
+            <div style="padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 8px;">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mstyle mathcolor="#c259d9" mathsize="1.4em">
+                        <msub>
+                            <mi mathvariant="bold">P</mi>
+                            <mi mathsize="0.7em">final</mi>
+                        </msub>
+                    </mstyle>
+        
+                    <mo mathcolor="#eae6fd" mathsize="1.2em">=</mo>
+        
                     <mstyle mathcolor="#4dc4d8">
                         <msub>
                             <mi mathvariant="italic">P</mi>
                             <mi mathsize="0.7em">listă</mi>
                         </msub>
                     </mstyle>
-
-                    <mo mathcolor="#eae6fd">·</mo>
-            <mfrac>
-                <mstyle mathcolor="#f4a261" mathsize="0.95em">
-                    <mtext style="font-style: italic; font-weight: bold;">reducere</mtext>
-                </mstyle>
-                <mstyle mathcolor="#eae6fd" mathsize="0.9em">
-                    <mn>100</mn>
-                </mstyle>
-            </mfrac>
-                </mrow>
-            </mfenced>
-        </math>
-    </div>
-
-    <p>
-        Unde <b>P<sub>final</sub></b> este prețul pe care îl plătești, iar
-        <b>reducere</b> reprezintă procentul aplicat în campania curentă.
-    </p>
-</section>
+        
+                    <mo mathcolor="#eae6fd" mathsize="1.2em">-</mo>
+        
+                    <mfenced>
+                        <mrow>
+                            <mstyle mathcolor="#4dc4d8">
+                                <msub>
+                                    <mi mathvariant="italic">P</mi>
+                                    <mi mathsize="0.7em">listă</mi>
+                                </msub>
+                            </mstyle>
+        
+                            <mo mathcolor="#eae6fd">·</mo>
+                            <mfrac>
+                                <mstyle mathcolor="#f4a261" mathsize="0.95em">
+                                    <mtext style="font-style: italic; font-weight: bold;">reducere</mtext>
+                                </mstyle>
+                                <mstyle mathcolor="#eae6fd" mathsize="0.9em">
+                                    <mn>100</mn>
+                                </mstyle>
+                            </mfrac>
+                        </mrow>
+                    </mfenced>
+                </math>
+            </div>
+        
+            <p>
+                Unde <b>P<sub>final</sub></b> este prețul pe care îl plătești, iar
+                <b>reducere</b> reprezintă procentul aplicat în campania curentă.
+            </p>
+        </section>
 
     </main>
 
     <footer>
+        <p id="banner">Acesta este un proiect școlar!</p>
         <section id="locatie-showroom">
-            <h3>Unde ne găsești (Showroom SideQuest Supply)</h3>
+            <h3>Unde ne gasesti (Showroom SideQuest Supply)</h3>
             <p>Suntem situați chiar în incinta la locatia:</p>
         
             <iframe
