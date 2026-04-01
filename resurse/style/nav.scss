@@ -22,20 +22,24 @@ $latime-gradient: 200%;
     
     .burger-container {
     position: relative;
-    width: 30px;
-    height: 20px;
+    width: 25px;
+    height: 16px;
+    margin: 10px;
 
     .linie {
-        
+
         position: absolute;
         width: 100%;
         height: 3px;
         background-color: var(--culoare-text);
         border-radius: 2px;
 
+        border-radius: 2px;
+        opacity: 0;
+
         &:nth-child(1) { top: 0; }
-        &:nth-child(2) { top: 50%; transform: translateY(-50%); }
-        &:nth-child(3) { bottom: 0; }
+        &:nth-child(2) { top: 7px; } 
+        &:nth-child(3) { top: 14px; }
     }
 }
 }
@@ -153,10 +157,26 @@ nav {
         position: relative !important;
     }
 
-    #hamburger {
-        display: block !important;
-        z-index: 1001;
-    }
+        #hamburger {
+            display: block !important;
+            z-index: 1001;
+    
+            .burger-container {
+            .linie {
+                animation: apareHamburger 1s ease forwards !important;
+
+                &:nth-child(1) { 
+                    animation-delay: 0s; 
+                }
+                &:nth-child(2) { 
+                    animation-delay: 0.2s; 
+                }
+                &:nth-child(3) { 
+                    animation-delay: 0.4s; 
+                }
+            }
+        }
+        }
 
     body nav ul.meniu {
         display: none; // ascuns complet
@@ -176,9 +196,9 @@ nav {
     // declansatorul
     body nav #ch-menu:checked ~ ul.meniu {
         display: flex !important; 
-        // Forțăm animația să ruleze
         animation: deschideTrapa 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
     }
+
 }
 
 /* animatia */
@@ -187,10 +207,29 @@ nav {
         opacity: 0;
         transform: rotate(-15deg) translateY(-30px);
         transform-origin: top left;
+
     }
     100% {
         opacity: 1;
         transform: rotate(0deg) translateY(0px);
         transform-origin: top left;
+    }
+}
+
+@keyframes apareHamburger {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+        background-color: cyan; 
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(0.5) rotate(5deg);
+        background-color: pink; 
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1) rotate(0deg);
+        background-color: var(--culoare-text); 
     }
 }

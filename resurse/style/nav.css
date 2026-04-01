@@ -15,8 +15,9 @@ nav ul.meniu > li > a {
 }
 #hamburger .burger-container {
   position: relative;
-  width: 30px;
-  height: 20px;
+  width: 25px;
+  height: 16px;
+  margin: 10px;
 }
 #hamburger .burger-container .linie {
   position: absolute;
@@ -24,16 +25,17 @@ nav ul.meniu > li > a {
   height: 3px;
   background-color: var(--culoare-text);
   border-radius: 2px;
+  border-radius: 2px;
+  opacity: 0;
 }
 #hamburger .burger-container .linie:nth-child(1) {
   top: 0;
 }
 #hamburger .burger-container .linie:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
+  top: 7px;
 }
 #hamburger .burger-container .linie:nth-child(3) {
-  bottom: 0;
+  top: 14px;
 }
 
 nav {
@@ -124,6 +126,18 @@ nav ul.meniu > li:hover ul.submeniu {
     display: block !important;
     z-index: 1001;
   }
+  #hamburger .burger-container .linie {
+    animation: apareHamburger 1s ease forwards !important;
+  }
+  #hamburger .burger-container .linie:nth-child(1) {
+    animation-delay: 0s;
+  }
+  #hamburger .burger-container .linie:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  #hamburger .burger-container .linie:nth-child(3) {
+    animation-delay: 0.4s;
+  }
   body nav ul.meniu {
     display: none;
     flex-direction: column;
@@ -154,6 +168,23 @@ nav ul.meniu > li:hover ul.submeniu {
     opacity: 1;
     transform: rotate(0deg) translateY(0px);
     transform-origin: top left;
+  }
+}
+@keyframes apareHamburger {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    background-color: cyan;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scaleX(0.5) rotate(5deg);
+    background-color: pink;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) rotate(0deg);
+    background-color: var(--culoare-text);
   }
 }
 
