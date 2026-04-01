@@ -13,6 +13,28 @@ nav ul.meniu > li > a {
 #hamburger {
   display: none;
 }
+#hamburger .burger-container {
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+#hamburger .burger-container .linie {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--culoare-text);
+  border-radius: 2px;
+}
+#hamburger .burger-container .linie:nth-child(1) {
+  top: 0;
+}
+#hamburger .burger-container .linie:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#hamburger .burger-container .linie:nth-child(3) {
+  bottom: 0;
+}
 
 nav {
   background-color: var(--culoare-secundara);
