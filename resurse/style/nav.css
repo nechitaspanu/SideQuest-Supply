@@ -130,13 +130,13 @@ nav ul.meniu > li:hover ul.submeniu {
     animation: apareHamburger 1s ease forwards !important;
   }
   #hamburger .burger-container .linie:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 0ms !important;
   }
   #hamburger .burger-container .linie:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 300ms !important;
   }
   #hamburger .burger-container .linie:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: 600ms !important;
   }
   body nav ul.meniu {
     display: none;
