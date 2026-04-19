@@ -1,0 +1,18 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: white;
+  color: #2c3e50;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+}
+
+00:00:00.000 --> 00:00:04.000 line:0 align:center
+Close-up on the <i>SideQuest</i> SQ-80 mechanical keyboard with retro aesthetics.
+
+00:00:04.500 --> 00:00:08.000 line:0 align:center
+Minimalist design featuring yellow switches and classic keycap colors.
+
+00:00:08.500 --> 00:00:11.000 line:0 align:center
+Premium build quality and precise tactile feedback for typing.

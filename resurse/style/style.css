@@ -17,7 +17,8 @@ body{
     --culoare-secundara: #292346; /*culoare pentru border */
     --culoare-text: #eae6fd; /* culoare pentru text */
     --culoare-hover: #0b1931; /* culoare pentru hover */
-    --culoare-visited: #6C5B7B;
+    --culoare-vizitat: #6C5B7B;
+    --c1: rgba(0, 210, 255, 0.2); /* Pata fină și transparentă */
     --margine-pagina: 120px;
     background-color: var(--culoare-fundal);
 
@@ -79,16 +80,56 @@ figure{
     margin:0;
 }
 
-a:link {
-  color: white;
+main p a, main li a {
+    position: relative;
+    color: white;
+    text-decoration: underline;
+    transition: all 0.4s ease;
+    
+    /* pata de fundal */
+    background-image: radial-gradient(
+        ellipse, 
+        var(--c1) 0%, 
+        var(--c1) 40%, 
+        transparent 80%
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
 }
 
-a:visited {
-  color: var(--culoare-visited);
+/* pata creste */
+main p a:hover {
+    background-size: 100% 100%;
 }
 
-a:hover {
-  color: var(--culoare-hover);
+/* :active pentru click */
+main p a:active {
+    outline: 1px solid black;
+    /* distanta fata de text */
+    outline-offset: 2px;
+}
+
+/* sageata*/
+main a[href^="http"]::before {
+    content: "➦";
+    display: inline-block; 
+    font-size: 1.5em;
+    margin-right: 8px;
+    vertical-align: middle;
+    
+    /* fara sageata in chenar */
+    position: absolute;
+    right: 100%; 
+    white-space: nowrap;
+}
+
+main a[href^="http"] {
+    margin-left: 1.8em; 
+}
+
+main a[href^="http"]:hover::before {
+    color: #f170e4;
 }
 
 #grid-pagina {

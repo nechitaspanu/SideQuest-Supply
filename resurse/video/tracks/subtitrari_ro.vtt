@@ -1,0 +1,17 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: white; /* Cerința 5: Fundal alb */
+  color: #2c3e50;         /* Cerința 5: Text închis la culoare */
+  font-family: sans-serif;
+}
+
+00:00:00.000 --> 00:00:04.000 line:0 align:center
+Close-up pe tastatura mecanică <i>SideQuest</i> SQ-80.
+
+00:00:04.500 --> 00:00:08.000 line:0 align:center
+Observați culorile vibrante ale tastelor custom.
+
+00:00:08.500 --> 00:00:11.000 line:0 align:center
+Calitate premium și feedback tactil precis pentru typing.

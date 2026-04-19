@@ -1,0 +1,39 @@
+{
+  "name": "sidequest-supply",
+  "version": "1.0.0",
+  "description": "magazin gaming",
+  "keywords": [
+    "jocuri",
+    "consola",
+    "SideQuest",
+    "Supply",
+    "scaune",
+    "gaming",
+    "tastatura",
+    "setup",
+    "periferice",
+    "Nintendo"
+  ],
+  "homepage": "https://github.com/nechitaspanu/SideQuest-Supply#readme",
+  "bugs": {
+    "url": "https://github.com/nechitaspanu/SideQuest-Supply/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nechitaspanu/SideQuest-Supply.git"
+  },
+  "license": "ISC",
+  "author": "Spanu Nechita",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5"
+  }
+}

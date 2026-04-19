@@ -2,33 +2,13 @@
 <html lang="ro">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Spanu-Nechita">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideQuest Supply </title> 
     <meta name="description"
         content="SideQuest Supply: Magazinul tău de gaming. Console, jocuri, periferice și scaune cu livrare prin curier. Pregătește-te pentru nivelul următor!">
-    <meta name="keywords" content="jocuri, consola, SideQuest Supply, scaune, gaming, tastatura, setup, periferice, Nintendo">
+    <meta name="keywords"
+        content="jocuri, consola, SideQuest Supply, scaune, gaming, tastatura, setup, periferice, Nintendo">
 
-    <title>SideQuest Supply </title> 
-    <link rel="icon" type="image/png" href="/resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/resurse/imagini/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/resurse/ico/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/resurse/imagini/favicon/site.webmanifest" />
-
-    <link rel="stylesheet" href="/resurse/style/reset.css" type="text/css" />
-    <link rel="stylesheet" href="/resurse/style/style.css" type="text/css" />
-    <link rel="stylesheet" href="/resurse/style/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/resurse/style/print.css" media="print">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <%- include('../fragmente/head.ejs') %>
 
 </head>
 
@@ -36,52 +16,8 @@
     <header>
         <h1 id="top">SideQuest Supply <i class="fa-solid fa-gamepad"></i></h1>
         <img src="/resurse/imagini/sigla.png" alt="sigla" class="master-sword"/>
-    <nav>
-        <input type="checkbox" id="ch-menu">
-        <label id="hamburger" for="ch-menu">
-            <div class="burger-container">
-                <span class="linie"></span>
-                <span class="linie"></span>
-                <span class="linie"></span>
-            </div>
-        </label>
-        <ul class="meniu">
-            <li>
-                <a href="index.html">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="text-meniu">Acasă</span>
-                </a>
-            </li>
-            <li class="has-submeniu">
-                <a href="#produse">
-                    <i class="fa-solid fa-cart-shopping fa-bounce"></i>
-                    <span class="text-meniu">Produse</span>
-                </a>
-                <ul class="submeniu">
-                    <li><a href="#produse">Catalog</a></li>
-                    <li><a href="#detalii-produs">Detalii Produse</a></li>
-                    <li><a href="#articole-disponibile">Jocuri</a></li>
-                </ul>
-            </li>
-            <li class="has-submeniu">
-                <a href="#trailere-gameplay">
-                    <i class="fa-solid fa-video"></i>
-                    <span class="text-meniu">Video</span>
-                </a>
-                <ul class="submeniu">
-                    <li><a href="#trailere-gameplay">Trailere Oficiale</a></li>
-                    <li><a href="#review-hardware">Review Hardware</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#locatie-showroom">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span class="text-meniu">Contact</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    </header>
+
+    <%- include('../fragmente/header.ejs') %>
 
     <main> 
         <div id="grid-pagina">
@@ -93,6 +29,7 @@
                 </hgroup>
             
                 <p class="intro">Vă mulțumim că ne vizitați site-ul. </p>
+                <p> ip: <%- locals.ip %> </p>
             
                 <div class="intro-oferte">
                     <div>Console</div>
@@ -394,6 +331,18 @@
                         <li>Mousepad-uri textile de dimensiuni extinse</li>
                         <li>Scaune ergonomice cu suport lombar</li>
                     </ul>
+
+                    <div class="video-container">
+                        <video controls poster="/resurse/imagini/tastatura.png" preload="metadata" class="video-main">
+                            <source src="/resurse/video/prezentare.mp4" type="video/mp4">
+                            <source src="/resurse/video/prezentare.webm" type="video/webm">
+                    
+                            <track label="Română" kind="subtitles" srclang="ro" src="/resurse/video/tracks/subtitrari_ro.vtt" default>
+                            <track label="English" kind="subtitles" srclang="en" src="/resurse/video/tracks/caption_eng.vtt">
+                    
+                            Browserul tău nu suportă elementul video.
+                        </video>
+                    </div>
                 </section>
             
                 <section>
@@ -456,7 +405,7 @@
                 </figure>
             
                 <p>Pentru a fi la curent cu ultimele știri oficiale, vizitați site-ul
-                    <a href="https://www.nintendo.com" target="_blank">Nintendo Official</a>.
+                    <a href="https://www.nintendo.com" target="_blank" >Nintendo Official</a>.
                 </p>
             
             
@@ -645,42 +594,7 @@
 
     </main>
 
-    <footer>
-        <p id="banner">Acesta este un proiect școlar!</p>
-        <section id="locatie-showroom">
-            <h3>Unde ne gasesti (Showroom SideQuest Supply)</h3>
-            <p>Suntem situați chiar în incinta la locatia:</p>
-        
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8865486221102!2d26.097035012232425!3d44.43548937095513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f13898f%3A0xa3200754144a01ba!2sStrada%20Academiei%2014%2C%20010014%20Bucure%C8%99ti!5e0!3m2!1sen!2sro!4v1772747281485!5m2!1sen!2sro"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-        <address>
-        Magazinul SideQuest Supply,<br>
-        <a href="https://maps.app.goo.gl/qVF7RVXjhEjUe64Q8" target="_blank">
-            Strada Academiei, Nr. 14,<br>
-            București, Sector 1, România
-        </a>
-        <br><br>
-        E-mail suport: <a href="mailto:contact@sidequest-supply.ro">contact@sidequest-supply.ro</a>
-        <br>
-        Telefon: <a href="tel:+40722123456">+40 722 123 456</a>
-        <br>
-        Chat Live: <a href="https://wa.me/40722123456" target="_blank">WhatsApp SideQuest</a>
-        <br><br>
-        <a href="#" id="link-top" title="Mergi la începutul paginii">
-            <div id="triunghi"></div>
-        </a>
-        <br>
-        </address> 
-        <small>
-        &copy; 2026 SideQuest Supply. Toate drepturile rezervate. 
-        <br>
-        Pagina a fost creată la data de 
-        <time datetime="2025-02-02">2 februarie 2025</time>.
-    </small>
-    </footer>
+   <%- include('../fragmente/footer.ejs') %>
 </body>
 
 </html>
