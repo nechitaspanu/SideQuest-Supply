@@ -517,6 +517,8 @@
                     </div>
 
             </section>
+            
+
             <section id="bonus-playlist">
                 <h2>Recenzii Jocuri</h2>
                 <p>Vă prezentăm o selecție de recenzii obiective pentru a vedea cum se comportă cele mai noi titluri pe hardware-ul nostru.
@@ -535,6 +537,8 @@
                 </div>
             </section>
         </div>
+
+
         <section id="calcul-pret">
             <hr>
             <h3>Cum calculăm reducerile SideQuest Supply?</h3>
@@ -591,6 +595,25 @@
                 <b>reducere</b> reprezintă procentul aplicat în campania curentă.
             </p>
         </section>
+
+        <div id="galerie-grid-container" class="grid-galerie">
+            <% const vectLuni=["ianuarie","februarie","martie","aprilie","mai","iunie", "iulie"
+                ,"august","septembrie","octombrie","noiembrie","decembrie"]; const lunaCurenta=vectLuni[new Date().getMonth()];
+                let contor=0; if (locals.imagini) { for (let imag of imagini) { if (contor>= 12) break;
+                if (imag.luni && imag.luni.includes(lunaCurenta)) {
+                %>
+                <figure>
+                    <picture>
+                        <source srcset="<%- cale %><%- imag.cale_fisier %>" media="(max-width:1100px)">
+                        <img src="<%- cale %><%- imag.cale_fisier %>" alt="<%- imag.alt ? imag.alt : imag.cale_fisier %>"
+                            title="<%- imag.text_descriere %>">
+                    </picture>
+                    <figcaption>
+                        <%- imag.text_descriere %>
+                    </figcaption>
+                </figure>
+                <% contor++; } } } %>
+        </div>
 
     </main>
 

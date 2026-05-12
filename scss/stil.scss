@@ -1,0 +1,21 @@
+$culoare-border: #5d5d81;
+
+#galerie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    figure {
+        border: 2px solid $culoare-border;
+        transition: transform 0.5s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            filter: grayscale(50%);
+        }
+    }
+}

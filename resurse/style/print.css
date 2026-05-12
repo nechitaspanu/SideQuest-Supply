@@ -17,7 +17,7 @@
         color: black;
     }
 
-    /* imagini, video, ifrae ascunse */
+    /* imagini, video, iframe ascunse */
     img, video, iframe, figure, figcaption,
     .flex-video, #link-top {
         display: none !important;
@@ -25,7 +25,7 @@
 
     /* gridul devine block */
     #grid-pagina {
-        display: block !important;
+        display: block !important; /* grid devine block pentru a se aranja pe verticala */
     }
 
     /* linkurile apar ca text normal */
@@ -37,24 +37,25 @@
     /* h1 */
     h1 {
         text-align: center;
-        font-size: 2.5rem; /* 2.5 ori mai mare decat html (16px) */
+        font-size: 2.5rem;
         text-decoration: underline;
         page-break-after: always; /* page break dupa h1 */
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* centrat vertical pe prima pagina */
+        height: 100vh; 
     }
 
     nav {
-        display: none !important;
+        display: none !important; /* ascundem meniul de navigare la print */
     }
 
-    /* page break inainte de footer */
+    /* page break inainte de footer; fortam footer-ul sa inceapa pe o noua pagina */
     footer {
         page-break-before: always;
     }
 
+    /* watermark pe mijlocul paginii */
     body::before {
         content: "Spanu Nechita";
         position: fixed;

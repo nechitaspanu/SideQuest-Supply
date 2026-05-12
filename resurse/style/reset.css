@@ -1,5 +1,5 @@
 
-/* spatieri */
+/* elimina spatieri */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -58,13 +58,13 @@ ol {
 
 li { line-height: 1.6; }
 
-/* link-uri */
+/* link-uri: elimina sublinierea */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* tabele */
+/* tabele: pentru nu a avea spatiu dublu intre celule */
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -81,7 +81,7 @@ caption {
     caption-side: bottom;
 }
 
-/* media */
+/* media: niciun videoclip/imagine nu e mai lata decat containerul */
 img, video, iframe {
     max-width: 100%;
     height: auto;

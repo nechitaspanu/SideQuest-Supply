@@ -1,0 +1,41 @@
+{
+  "cale_galerie": "resurse/imagini/galerie",
+  "imagini": [
+    {
+      "cale_fisier": "rsz_luigi-galerie.png",
+      "titlu": "Luigi's Mansion",
+      "text_descriere": "O aventura plina de suspans alaturi de Luigi.",
+      "luni": ["mai", "iunie", "iulie"]
+    },
+    {
+      "cale_fisier": "rsz_plants-galerie.png",
+      "titlu": "Plants vs Zombies",
+      "text_descriere": "Apara-ti gradina folosind armata de plante.",
+      "luni": ["mai", "august", "septembrie"]
+    },
+    {
+      "cale_fisier": "rsz_pokemon-galerie.png",
+      "titlu": "Pokemon Classic",
+      "text_descriere": "Prinde-i pe toti in aceasta aventura legendara.",
+      "luni": ["mai", "octombrie", "noiembrie"]
+    },
+    {
+      "cale_fisier": "rsz_pokemon-legends-galerie.png",
+      "titlu": "Pokemon Legends",
+      "text_descriere": "Exploreaza regiuni vaste si descopera noi specii.",
+      "luni": ["martie", "aprilie", "mai"]
+    },
+    {
+      "cale_fisier": "rsz_super-smash-bros-galerie.png",
+      "titlu": "Super Smash Bros",
+      "text_descriere": "Cel mai mare crossover de lupte din istoria jocurilor.",
+      "luni": ["ianuarie", "februarie", "mai"]
+    },
+    {
+      "cale_fisier": "rsz_totk-galerie.png",
+      "titlu": "Zelda: Tears of the Kingdom",
+      "text_descriere": "O aventura epica ce redefineste limitele libertatii.",
+      "luni": ["mai", "iunie", "decembrie"]
+    }
+  ]
+}

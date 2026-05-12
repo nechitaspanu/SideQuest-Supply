@@ -3,11 +3,9 @@ $font-meniu: 'Orbitron', sans-serif;
 $durata-tranzitie: 0.6s;
 $latime-gradient: 200%;
 
-
-// 3. bloc de cod similar cu @extend
-%stil-link-baza {
+%stil-link-baza { 
     display: block;
-    text-decoration: none;
+    text-decoration: none; //scoate sublinierea implicita a linkurilor
     font-family: $font-meniu;
     color: var(--culoare-text);
     transition: all $durata-tranzitie ease;
@@ -18,7 +16,7 @@ $latime-gradient: 200%;
 }
 
 #hamburger {
-    display: none;
+    display: none; // ascundem hamburgerul pe ecrane mari
     
     .burger-container {
     position: relative;
@@ -37,7 +35,7 @@ $latime-gradient: 200%;
         border-radius: 2px;
         opacity: 0;
 
-        &:nth-child(1) { top: 0; }
+        &:nth-child(1) { top: 0; } 
         &:nth-child(2) { top: 7px; } 
         &:nth-child(3) { top: 14px; }
     }
@@ -46,43 +44,43 @@ $latime-gradient: 200%;
 
 // meniu
 nav {
-    background-color: var(--culoare-secundara);
+    background-color: var(--culoare-secundara); // culoarea de fundal a barei de navigare
 
     ul.meniu {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; /* meniu pe orizontala */
         list-style: none;
         margin: 0;
         padding: 0;
 
         > li {
-            position: relative;
+            position: relative; // pentru a putea pozitiona submeniurile absolut fata de parinte
 
             > a {
-                @extend %stil-link-baza;
+                @extend %stil-link-baza; // copie proprietati din stil-link-baza
                 padding: 1rem 1.5rem;
                 font-weight: bold;
                 position: relative;
                 overflow: hidden;
 
-                &::before {
+                &::before { /*linia de subliniere animata*/
                     content: '';
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                    width: $latime-gradient;
+                    width: $latime-gradient; // latimea gradientului
                     height: 5px;
                     background: linear-gradient(
                         to right,
                         var(--culoare-secundara),
                         var(--culoare-grid)
                     );
-                    transform: translateX(50%);
-                    transition: transform $durata-tranzitie ease;
+                    transform: translateX(50%); // pozitionare initiala (ascunsa)
+                    transition: transform $durata-tranzitie ease; // animatie pentru transformare
                 }
 
                 &:hover::before {
-                    transform: translateX(0%);
+                    transform: translateX(0%); // aduce linia in pozitia vizibila
                 }
 
                 &:hover {
@@ -92,7 +90,7 @@ nav {
 
             // submeniu
             ul.submeniu {
-                position: absolute;
+                position: absolute; // il lipim sub parinte
                 top: 100%;
                 left: 0;
                 list-style: none;
@@ -100,9 +98,9 @@ nav {
                 margin: 0;
                 background-color: var(--culoare-fundal);
                 min-width: 180px;
-                transform: scaleY(0);
-                transform-origin: center center;
-                transition: transform $durata-tranzitie ease;
+                transform: scaleY(0); /* ascunde submeniurile */
+                transform-origin: center center; 
+                transition: transform $durata-tranzitie ease; // deschiderea nu e instantanee
 
                 li {
                     a {
@@ -124,7 +122,7 @@ nav {
             }
 
             &:hover ul.submeniu {
-                transform: scaleY(1);
+                transform: scaleY(1); // afisam submeniul prin scalare pe verticala
             }
         }
     }
@@ -134,16 +132,16 @@ nav {
 @media screen and (max-width: 62.5em) {
     nav ul.meniu li a {
         .text-meniu {
-            display: none;
+            display: none; // ascundem textul
         }
 
         i {
-            font-size: 1.2rem;
+            font-size: 1.2rem; 
         }
     }
 
     nav ul.meniu li {
-        width: auto;
+        width: auto; // elementele meniului se ajusteaza la continut 
         padding: 0 0.5rem;
     }
 }
@@ -153,22 +151,21 @@ nav {
     
     // perspectiva 3D
     nav {
-        perspective: 1000px !important;
+        perspective: 1000px !important; 
         position: relative !important;
     }
 
         #hamburger {
-            display: block !important;
+            display: block !important; // butonasul hamburger devine vizibil pe ecrane mici
             z-index: 1001;
     
             .burger-container {
             .linie {
                 animation: apareHamburger 1s ease forwards !important;
 
-                // bonus 3: delay pentru fiecare linie
                @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation-delay: ($i - 1) * 300ms !important;
+                        animation-delay: ($i - 1) * 300ms !important; 
                     }
                 }
             }
@@ -177,7 +174,7 @@ nav {
 
     body nav ul.meniu {
         display: none; // ascuns complet
-        flex-direction: column;
+        flex-direction: column; // meniul devine vertical
         position: absolute;
         top: 100%;
         left: 0;
@@ -187,13 +184,13 @@ nav {
         margin: 0;
         padding: 0;
         list-style: none;
-        transform-origin: top left; // balamaua de sus
+        transform-origin: top left; // balamaua de sus in staga
     }
 
     // declansatorul
     body nav #ch-menu:checked ~ ul.meniu {
-        display: flex !important; 
-        animation: deschideTrapa 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+        display: flex !important; // il face vizibil
+        animation: deschideTrapa 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important; // porneste animatia
     }
 
 }
@@ -202,31 +199,31 @@ nav {
 @keyframes deschideTrapa {
     0% {
         opacity: 0;
-        transform: rotate(-15deg) translateY(-30px);
+        transform: rotate(-15deg) translateY(-30px); // rotit in stanga si usor ridicat
         transform-origin: top left;
 
     }
     100% {
         opacity: 1;
-        transform: rotate(0deg) translateY(0px);
+        transform: rotate(0deg) translateY(0px); // pozitie finala
         transform-origin: top left;
     }
 }
 
 @keyframes apareHamburger {
     0% {
-        opacity: 0;
+        opacity: 0; 
         transform: scaleX(0);
         background-color: cyan; 
     }
     50% {
-        opacity: 0.5;
-        transform: scaleX(0.5) rotate(5deg);
+        opacity: 0.5; 
+        transform: scaleX(0.5) rotate(5deg); // se latesc pe jumatate si se rotesc usor
         background-color: pink; 
     }
     100% {
-        opacity: 1;
-        transform: scaleX(1) rotate(0deg);
+        opacity: 1; 
+        transform: scaleX(1) rotate(0deg); // ajung la dimensiunea finala si se indreapta
         background-color: var(--culoare-text); 
     }
 }
