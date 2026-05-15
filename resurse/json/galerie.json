@@ -36,6 +36,36 @@
       "titlu": "Zelda: Tears of the Kingdom",
       "text_descriere": "O aventura epica ce redefineste limitele libertatii.",
       "luni": ["mai", "iunie", "decembrie"]
+    },
+    {
+      "cale_fisier": "rsz_botw.png",
+      "titlu": "Zelda: Breath of the Wild",
+      "text_descriere": "Urmareste aventura lui Link intr-o lume deschisa plina de mistere.",
+      "luni": ["septembrie", "iulie", "decembrie"]
+    },
+    {
+      "cale_fisier": "rsz_mario.png",
+      "titlu": "Mario Party Superstars",
+      "text_descriere": "Joaca alaturi de prieteni in cele mai distractive mini-jocuri Mario.",
+      "luni": ["octombrie", "ianuarie", "martie"]
+    },
+    {
+      "cale_fisier": "rsz_mario-odyssey.png",
+      "titlu": "Mario Odyssey",
+      "text_descriere": "Aventura lui Mario in lumea de jocuri.",
+      "luni": ["iulie", "august", "noiembrie"]
+    },
+    {
+      "cale_fisier": "rsz_tchia.png",
+      "titlu": "Tchia",
+      "text_descriere": "O aventura in lumea de jocuri.",
+      "luni": ["mai", "august", "decembrie"]
+    },
+    {
+      "cale_fisier": "rsz_animal-crossing.png",
+      "titlu": "Animal Crossing",
+      "text_descriere": "O aventura cu animalute in lumea de jocuri.",
+      "luni": ["aprilie", "iunie", "februarie"]
     }
   ]
 }

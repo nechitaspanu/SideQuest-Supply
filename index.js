@@ -132,15 +132,6 @@ module.exports = verificareJSON;
     // res.sendFile(path.join(__dirname, "index.html"));
 // });
 
-app.get(["/", "/index", "/home"], function(req, res){
-   const datele = fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json"), "utf8");
-   const imagini = JSON.parse(datele).imagini;
-   res.render("pagini/index", {
-    ip: req.ip, 
-    imagini: imagini,
-    cale: "/resurse/imagini/galerie/",
-   });
-});
 
 // pentru ca pagina sa fie accesibila din mai multe cai, FACEM VECTOR
 /*app.get(["/", "/index", "/home"], function(req, res){
@@ -220,7 +211,7 @@ function compileazaScss(caleScss, caleCss){
         caleCss = numeFis + ".css";
     }
     
-    // transformam in cale absoluta daca nu e deja (daca e relativa)
+    // transformam in cale absoluta daca nu e deja
     if (!path.isAbsolute(caleScss))
         caleScss = path.join(obGlobal.folderScss, caleScss);
     if (!path.isAbsolute(caleCss))
@@ -230,19 +221,28 @@ function compileazaScss(caleScss, caleCss){
     if (!fs.existsSync(obGlobal.folderCss))
         fs.mkdirSync(obGlobal.folderCss, {recursive: true}); 
     
-    // pregatim folderul de backup (daca nu exista, il cream)
+    // pregatim folderul de backup
     let caleBackup = path.join(obGlobal.folderBackup, "resurse/css");
     if (!fs.existsSync(caleBackup)) {
         fs.mkdirSync(caleBackup, {recursive:true});
     }
     
-    let numeFisCss = path.basename(caleCss);
+    let numeFisCss = path.basename(caleCss); // ex: "reflexie.css"
     if (fs.existsSync(caleCss)){
-        // facem copia de siguranta 
-        fs.copyFileSync(caleCss, path.join(caleBackup, numeFisCss));
+        // bonus 3 - etapa 5
+        let timestamp = Date.now(); 
+        let extensie = path.extname(numeFisCss); // ".css"
+        let numeFaraExt = path.basename(numeFisCss, extensie);
+        
+        // formam noul nume
+        let numeFisierBackup = `${numeFaraExt}_${timestamp}${extensie}`;
+        
+        // facem copia de siguranta cu timestamp in nume
+        fs.copyFileSync(caleCss, path.join(caleBackup, numeFisierBackup));
+        console.log(`>>> Backup creat: ${numeFisierBackup}`);
     }
 
-    // try catch pentru a nu crapa
+    // try catch pentru a nu crapa la erori de sintaxa SCSS
     try {
         let rez = sass.compile(caleScss, {"sourceMap":true}); 
         fs.writeFileSync(caleCss, rez.css);
@@ -310,6 +310,48 @@ app.get("/*pagina", function(req, res){ // orice cerere
             afisareEroare(res);
         }
     }
+});
+
+// bonus etapa 5 - galerie animata
+function pregatesteGalerie() {
+    const caleaJson = path.join(__dirname, "/resurse/json/galerie.json");
+    const date = JSON.parse(fs.readFileSync(caleaJson, "utf-8"));
+    
+    const toateImaginile = date.imagini;
+    const radacinaImagini = date.cale_galerie; // extragem resurse/imagini/galerie
+
+    // generam un numar aleator dintre 5, 7, 9, 11
+    const n = [5, 7, 9, 11][Math.floor(Math.random() * 4)];
+    
+    // luam ultimele n imagini
+    let imaginiSelectate = toateImaginile.slice(-n);
+
+    // mapam imaginile pentru a avea calea completa
+    imaginiSelectate = imaginiSelectate.map(img => {
+        return {
+            ...img,
+            cale_completa: `/${radacinaImagini}/${img.cale_fisier}`
+        };
+    });
+
+    // scriem variabila pentru sass
+    fs.writeFileSync(path.join(__dirname, "scss/variabile_galerie.scss"), `$nr-imagini: ${n};`);
+    compileazaScss("galerie_animata.scss");
+
+    return imaginiSelectate;
+}
+
+// ruta
+app.get(['/', '/index', '/home'], (req, res) => {
+    const imaginiAnimate = pregatesteGalerie();
+    const datele = fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json"), "utf8");
+    const imagini = JSON.parse(datele).imagini;
+    res.render('pagini/index', {
+        ip: req.ip,
+        imagini: imagini,
+        imaginiAnimate: imaginiAnimate,
+        cale: "/resurse/imagini/galerie/",
+    });
 });
 
 app.listen(8080, function() {

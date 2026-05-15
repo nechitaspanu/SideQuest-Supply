@@ -1,0 +1,153 @@
+@use "../node_modules/bootstrap/scss/bootstrap" with (
+    // culori de fundal pentru tema 1 
+    $primary: #7972c8, 
+    $body-bg: #46445C,
+
+    // culori pentru text
+    $body-color: beige,
+    $secondary: rgb(0, 0, 0),
+
+    // dimensiuni pentru ecrane diferite
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 850px,  // modificat de la 768px
+        lg: 1150px, // modificat de la 992px
+        xl: 1200px,
+        xxl: 1400px
+    ),
+
+    // dimensiunea border-radius 
+    $border-radius: 0.75rem,
+
+    // dimensiunea fontului pentru titluri
+    $h1-font-size: 3.0rem,
+
+    // familia fontului
+    $font-family-base: ("Montserrat", sans-serif),
+
+    // variabila aleasa
+    $danger: rgb(216, 164, 33),
+    
+    // distanta dintre elemente
+    $spacer: 1.5rem 
+);
+
+// daca bootstrap a stricat ceva, le rescriu aici
+// link-uri neschimbate
+a {
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+.card-personalizat {
+    @extend .card;
+    border: 2px solid bootstrap.$primary;
+}
+
+// tema 2
+.tema-blue-pink {
+    background-color: #0d1b2a !important;
+    color: #f0f0f0 !important;
+
+    // heading-uri
+    h1, h2, h3, h4, h5, h6 {
+        color: #fb518ce3 !important;
+    }
+
+    // link-uri
+    a {
+        color: #51e1fbe9 !important;
+
+        &:hover {
+            color: #fb518ce3 !important;
+        }
+    }
+
+    // navbar
+    .navbar {
+        background-color: #0a1628 !important;
+        border-bottom: 2px solid #fb518ce3;
+
+        .navbar-brand,
+        .nav-link {
+            color: #f0f0f0 !important;
+
+            &:hover {
+                color: #fb518ce3 !important;
+            }
+        }
+    }
+
+    // butoane
+    .btn-primary {
+        background-color: #51e1fbe9 !important;
+        border-color: #51e1fbe9 !important;
+        color: #ffffff !important;
+
+        &:hover {
+            background-color: #fb518ce3 !important;
+            border-color: #fb518ce3 !important;
+        }
+    }
+
+    .btn-secondary {
+        background-color: #fb518ce3 !important;
+        border-color: #fb518ce3 !important;
+        color: #ffffff !important;
+
+        &:hover {
+            background-color: #51e1fbe9!important;
+            border-color: #51e1fbe9 !important;
+        }
+    }
+
+    // carduri
+    .card {
+        background-color: #112240 !important;
+        border: 2px solid #51e1fbe9 !important;
+        color: #f0f0f0 !important;
+
+        .card-title {
+            color: #fb518ce3 !important;
+        }
+    }
+
+    .card-personalizat {
+        border: 2px solid #ff2d78 !important;
+    }
+
+    // inputs
+    input, textarea, select {
+        background-color: #112240 !important;
+        color: #f0f0f0 !important;
+        border: 1px solid #51e1fbe9 !important;
+
+        &:focus {
+            border-color: #ff2d78 !important;
+            box-shadow: 0 0 0 0.2rem rgba(255, 45, 120, 0.35) !important;
+        }
+    }
+
+    // tabele
+    .table {
+        color: #f0f0f0 !important;
+        border-color: #51e1fbe9 !important;
+
+        thead {
+            background-color: #51e1fbe9 !important;
+            color: #ffffff !important;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 45, 120, 0.1) !important;
+        }
+    }
+
+    // footer
+    footer {
+        background-color: #0a1628 !important;
+        color: #adb5bd !important;
+        border-top: 2px solid #51e1fbe9;
+    }
+}

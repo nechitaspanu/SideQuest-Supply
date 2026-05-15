@@ -20,6 +20,13 @@
     <%- include('../fragmente/header.ejs') %>
 
     <main> 
+        <section id="sectiune-titlu" style="text-align: center; margin-bottom: 200px;">
+            <div id="container-reflexie">
+                <div id="text">SideQuest</div>
+                <div id="text-reflectat">SideQuest</div>
+            </div>
+        </section>
+
         <div id="grid-pagina">
 
             <section id="welcome">
@@ -251,6 +258,7 @@
             </section>
 
         </div>
+        <hr class="hr-stilizat">
         <section id="promotii">
                 <h2>Promoții</h2>
             
@@ -615,6 +623,18 @@
                 <% contor++; } } } %>
         </div>
 
+        <section id="sectiune-galerie-animata">
+            <div class="galerie-animata">
+                <% for (let img of imaginiAnimate) { %>
+                    <figure>
+                        <img src="<%= img.cale_completa %>" alt="<%= img.titlu %>">
+                        <figcaption>
+                            <%= img.titlu %>
+                        </figcaption>
+                    </figure>
+                    <% } %>
+            </div>
+        </section>
     </main>
 
    <%- include('../fragmente/footer.ejs') %>

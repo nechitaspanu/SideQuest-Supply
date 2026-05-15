@@ -1,0 +1,46 @@
+.hr-stilizat {
+    /* dezactivam orice stil prestabilit */
+    border: none !important; 
+    height: 6px !important; 
+    
+    /* pentru ca culoarea sa nu se vada stearsa*/
+    opacity: 1 !important; 
+
+    /* spatiul pentru stea */
+    margin: 60px auto !important; 
+    width: 80%;
+    position: relative;
+    overflow: visible !important; 
+
+    /* gradient */
+    background: linear-gradient(
+        to right, 
+        #292346 0%, 
+        #292346 45%, 
+        transparent 45%, 
+        transparent 55%, 
+        #292346 55%, 
+        #292346 100%
+    ) !important;
+
+    border-radius: 10px;
+}
+
+/* steaua */
+.hr-stilizat::after {
+    content: "\273B"; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* aceeasi culoare și opacitate */
+    color: #292346 !important;
+    opacity: 1 !important;
+    
+    font-size: 30px;
+    background-color: transparent; 
+    padding: 0 10px;
+    z-index: 5;
+    line-height: 1;
+}
