@@ -3,17 +3,16 @@
     border: none !important; 
     height: 6px !important; 
     
-    /* pentru ca culoarea sa nu se vada stearsa*/
     opacity: 1 !important; 
 
     /* spatiul pentru stea */
     margin: 60px auto !important; 
     width: 80%;
     position: relative;
-    overflow: visible !important; 
+    overflow: visible !important; /* permite stelutei sa iasa in afara liniei */
 
     /* gradient */
-    background: linear-gradient(
+    background: linear-gradient( /* colorez linia cu un gradient care se repeta pe orizontala */
         to right, 
         #292346 0%, 
         #292346 45%, 
@@ -32,7 +31,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* centrarea stelei */
     
     /* aceeasi culoare și opacitate */
     color: #292346 !important;
@@ -41,6 +40,6 @@
     font-size: 30px;
     background-color: transparent; 
     padding: 0 10px;
-    z-index: 5;
+    z-index: 5; /* asigură că steaua este deasupra liniei */
     line-height: 1;
 }

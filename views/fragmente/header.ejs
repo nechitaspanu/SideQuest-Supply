@@ -7,9 +7,14 @@
                 <span class="linie"></span>
             </div>
         </label>
+
+        <button id="btn-tema" class="btn btn-sm">
+            <i id="icon-tema" class="bi bi-sun-fill"></i>
+        </button>
+        
         <ul class="meniu">
             <li>
-                <a href="index.html">
+                <a href="/">
                     <i class="fa-solid fa-house"></i>
                     <span class="text-meniu">Acasă</span>
                 </a>
@@ -20,9 +25,11 @@
                     <span class="text-meniu">Produse</span>
                 </a>
                 <ul class="submeniu">
-                    <li><a href="#produse">Catalog</a></li>
-                    <li><a href="#detalii-produs">Detalii Produse</a></li>
-                    <li><a href="#articole-disponibile">Jocuri</a></li>
+                    <li><a href="/produse">Toate</a></li>
+                    <% for (let opt of locals.genuri) { %>
+                        <li><a href="/produse?gen=<%- opt.unnest %>"><%- opt.unnest %></a></li>
+                        <% } %>
+
                 </ul>
             </li>
             <li class="has-submeniu">

@@ -18,7 +18,7 @@
 /* textul principal */
 #text {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* deasupra reflexiei */
     color: #292346;
 }
 
@@ -32,14 +32,14 @@
     color: #292346;
 
     transform-origin: center top; 
-    transform: scaleY(-0.5) translateY(-40px) skewX(-15deg);
+    transform: scaleY(-0.5) translateY(-40px) skewX(-15deg); /*intoarce textul cu susul in jos, il scaleaza pe verticala, il muta putin in sus pentru a se vedea mai bine si ii aplica o usoara inclinare pentru efect de distorsionare */
 
     opacity: 0.8;
     filter: blur(1px);
 
     /* masca neschimbata */
     -webkit-mask-image: repeating-linear-gradient(
-        to bottom,
+        to bottom, /* creeaza un gradient care se repeta pe verticala */
         rgba(0,0,0,0.9) 0px,
         rgba(0,0,0,0.9) 3px,
         rgba(0,0,0,0) 6px,
@@ -62,7 +62,7 @@
 @keyframes unde-apa {
     0% {
         -webkit-mask-image: repeating-radial-gradient(
-            ellipse 120% 30% at 50% -10%,
+            ellipse 120% 30% at 50% -10%, /* elipsa turtita (forma si centrul) */
             black 0px, black 3px,
             transparent 6px, transparent 13px
         );

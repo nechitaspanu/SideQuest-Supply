@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="description" content="SideQuest Supply: Magazinul tău de gaming. Console, jocuri, periferice și scaune cu livrare prin curier. Pregătește-te pentru nivelul următor!">
+        <meta name="keywords" content="jocuri, consola, SideQuest Supply, scaune, gaming, tastatura, setup, periferice, Nintendo">
+        <link rel="stylesheet" href="/resurse/style/produse.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <script src="/resurse/js/comparare.js"></script>
+        <script type="text/javascript" src="/resurse/js/paginare.js"></script>
+
+        <title>SideQuest Supply - Produse</title>
+        <%- include("../fragmente/head") %>
+        <script type="text/javascript" src="/resurse/js/produse.js"></script>
+    </head>
+    <body>
+
+        <%- include("../fragmente/header") %>
+
+        <main>
+        <div id="sectiune-filtre" class="container-fluid p-3">
+            <div class="row g-3 align-items-start">
+        
+                <!-- 1. text -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="inp-nume" class="form-label">Nume:</label>
+                    <input type="text" id="inp-nume" class="form-control form-control-sm" placeholder="caută joc...">
+                </div>
+        
+                <!-- 2. range -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="inp-pret" class="form-label">Preț maxim: <span>0</span> - <span>350</span> <span
+                            id="infoRange">(350)</span></label>
+                    <input type="range" id="inp-pret" class="form-range" value="350" min="0" max="350">
+                </div>
+        
+                <!-- 3. datalist -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="inp-scor" class="form-label">Scor Metacritic minim:</label>
+                    <input type="number" id="inp-scor" class="form-control form-control-sm" list="lista-scoruri" min="0"
+                        max="100" placeholder="oricare">
+                    <datalist id="lista-scoruri">
+                        <option value="70">
+                        <option value="75">
+                        <option value="80">
+                        <option value="85">
+                        <option value="90">
+                        <option value="95">
+                        <option value="100">
+                    </datalist>
+                </div>
+        
+                <!-- 4. radio multiplayer - toggle buttons -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label class="form-label d-block">Multiplayer online:</label>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="gr_multi" id="multi_toate" value="toate" checked>
+                        <label class="btn btn-outline-primary btn-sm" for="multi_toate">Toate</label>
+        
+                        <input type="radio" class="btn-check" name="gr_multi" id="multi_da" value="da">
+                        <label class="btn btn-outline-primary btn-sm" for="multi_da">Da</label>
+        
+                        <input type="radio" class="btn-check" name="gr_multi" id="multi_nu" value="nu">
+                        <label class="btn btn-outline-primary btn-sm" for="multi_nu">Nu</label>
+                    </div>
+                </div>
+        
+                <!-- 5. checkboxuri limbi - toggle buttons -->
+                <div class="col-12 col-md-6">
+                    <label class="form-label d-block">Limbi disponibile:</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        <% [['română','Română'],['engleză','Engleză'],['franceză','Franceză'],['germană','Germană'],['spaniolă','Spaniolă'],['japoneză','Japoneză'],['italiană','Italiană'],['rusă','Rusă'],['chineză','Chineză'],['poloneză','Poloneză']].forEach(function(l)
+                            { %>
+                            <input type="checkbox" class="btn-check chk-limba" id="chk-<%- l[0] %>" value="<%- l[0] %>" checked
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary btn-sm" for="chk-<%- l[0] %>"><%- l[1] %></label>
+                            <% }) %>
+                    </div>
+                </div>
+        
+                <!-- 6. textarea cu floating label -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="inp-descriere" placeholder="ex: aventură"
+                            style="height:80px"></textarea>
+                        <label for="inp-descriere">Caută în descriere</label>
+                    </div>
+                </div>
+        
+                <!-- 7. select simplu -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="inp-platforma" class="form-label">Platformă:</label>
+                    <select id="inp-platforma" class="form-select form-select-sm">
+                        <option selected value="toate">oricare</option>
+                        <% for (let opt of locals.platforme) { %>
+                            <option value="<%- opt.unnest %>"><%- opt.unnest %></option>
+                            <% } %>
+                    </select>
+                </div>
+        
+                <!-- 8. select multiplu PEGI -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="inp-pegi" class="form-label">PEGI (Ctrl+click pentru mai multe):</label>
+                    <select id="inp-pegi" class="form-select form-select-sm" multiple size="5">
+                        <option value="3" selected>PEGI 3+</option>
+                        <option value="7" selected>PEGI 7+</option>
+                        <option value="12" selected>PEGI 12+</option>
+                        <option value="16" selected>PEGI 16+</option>
+                        <option value="18" selected>PEGI 18+</option>
+                    </select>
+                </div>
+        
+                <!-- Butoane -->
+                <div class="col-12">
+                    <button class="btn btn-primary btn-sm" id="filtrare">
+                        <i class="bi bi-funnel-fill"></i>
+                        <span class="d-none d-md-inline"> Filtrează</span>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" id="resetare">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        <span class="d-none d-md-inline"> Resetează</span>
+                    </button>
+                    <button class="btn btn-primary btn-sm" id="sortCrescPret">
+                        <i class="bi bi-sort-numeric-down"></i>
+                        <span class="d-none d-md-inline"> Sortează crescător</span>
+                    </button>
+                    <button class="btn btn-primary btn-sm" id="sortDescrescPret">
+                        <i class="bi bi-sort-numeric-up"></i>
+                        <span class="d-none d-md-inline"> Sortează descrescător</span>
+                    </button>
+                    <button class="btn btn-primary btn-sm" id="calculeaza">
+                        <i class="bi bi-calculator-fill"></i>
+                        <span class="d-none d-md-inline"> Calculează suma</span>
+                    </button>
+                </div>
+        
+                <div class="col-12">
+                    <p id="p-suma" class="text-muted small">Apăsați Alt+"c" pentru suma prețurilor jocurilor afișate.</p>
+                </div>
+        
+            </div>
+        </div>
+
+            <section id="produse">
+                <h2>Jocuri</h2>
+                <div class="grid-produse">
+                    <% for (let prod of locals.produse) { %>
+                        <article class="produs <%- prod.gen %> <%- prod.celMaiIeftin ? 'cel-mai-ieftin' : '' %>" id="ent<%- prod.id %>">
+                        
+                            <% if (prod.celMaiIeftin) { %>
+                                <div class="badge-ieftin">💰 Cel mai ieftin din categoria <%- prod.gen %>!</div>
+                                <% } %>
+                        
+                                    <h3 class="val-nume"><a href="/produs/<%- prod.id %>"><%- prod.nume %></a></h3>
+
+                            <div class="produs-continut">
+                                <table class="tabel-produs">
+                                    <tr>
+                                        <th>Preț</th>
+                                        <th>Platformă</th>
+                                        <th>Limbi</th>
+                                        <th>Data</th>
+                                        <th>Multiplayer</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="val-pret"><%- prod.pret %></td>
+                                        <td class="val-platforma"><%- prod.platforma %></td>
+                                        <td class="val-limbi"><%- prod.limbi_disponibile %></td>
+                                        <td>
+                                            <time datetime="<%- prod.data_adaugare %>">
+                                                <%
+                                                    const zile = ['Duminică','Luni','Marți','Miercuri','Joi','Vineri','Sâmbătă'];
+                                                    const luni = ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'];
+                                                    const d = new Date(prod.data_adaugare); // convertim data in text ca sa putem sa extragem partile din ea
+                                                    const ziSapt = zile[d.getDay()];
+                                                    const numeLuna = luni[d.getMonth()];
+                                                %>
+                                                <%- d.getDate() %>(<%- ziSapt %>)/<%- numeLuna %>/<%- d.getFullYear() %>
+                                            </time>
+                                        </td>
+                                        <td class="val-multiplayer"><%- prod.multiplayer_online ? 'Da' : 'Nu' %></td>
+                                    </tr>
+                                </table>
+
+                                <figure class="imag-produs">
+                                    <a href="/produs/<%- prod.id %>">
+                                        <img src="/resurse/imagini/produse/<%- prod.imagine %>"
+                                             width="150" height="150"
+                                             style="object-fit:cover;"
+                                             alt="[imagine <%- prod.nume %>]" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <p class="descriere"><%- prod.descriere %></p>
+
+                            <p class="categorie">Categorie: <span class="val-gen"><%- prod.gen %></span></p>
+                            <span class="val-varsta" style="display:none"><%- prod.varsta_minima %></span>
+
+                            <div class="butoane-produs">
+                                <button class="btn-pin" title="Păstrează produsul vizibil la filtrare">
+                                    <i class="bi bi-pin-fill"></i>
+                                </button>
+                                <button class="btn-ascunde" title="Ascunde temporar produsul">
+                                    <i class="bi bi-eye-slash-fill"></i>
+                                </button>
+                                <button class="btn-sterge-sesiune" title="Șterge produsul pentru această sesiune">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </div>
+                            <button class="btn-compara" data-id="<%- prod.id %>" data-nume="<%- prod.nume %>">compară</button>
+                        </article>
+
+                    <% } %>
+                </div>
+                <div id="paginare"></div>
+            </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+    </body>
+</html>

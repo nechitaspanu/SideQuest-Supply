@@ -1,0 +1,223 @@
+.produs {
+    background-color: #292346;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.produs-continut {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabel-produs {
+    flex: 1;
+    min-width: 0;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.tabel-produs th, .tabel-produs td {
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    text-align: center;
+}
+
+/* headingurile scurte nu se sparg, dar coloana cu limbi se poate sparge */
+.tabel-produs th {
+    white-space: nowrap;
+}
+
+.val-limbi {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.imag-produs {
+    flex-shrink: 0;
+}
+
+.imag-produs img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.grid-produse {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.butoane-produs {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.butoane-produs button {
+    background: none;
+    border: 1px solid #7972c8;
+    border-radius: 6px;
+    color: #7972c8;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.butoane-produs button:hover {
+    background-color: #7972c8;
+    color: white;
+}
+
+.btn-pin.activ {
+    background-color: #7972c8;
+    color: white;
+}
+
+.produs.pinned {
+    border: 2px solid #7972c8;
+    box-shadow: 0 0 10px rgba(121, 114, 200, 0.5);
+}
+
+.btn-compara {
+    background-color: #7972c8;
+    color: white;
+    border: 2px solid #7972c8;
+    border-radius: 8px;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.btn-compara:hover:not(:disabled) {
+    background-color: #5d56a8;
+    border-color: #5d56a8;
+}
+
+.btn-compara:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.container-comparare-stil {
+    background-color: #7972c8;
+    color: white;
+}
+
+.container-comparare-stil .btn-sterge-comparare {
+    background: #fff;
+    color: #7972c8;
+}
+
+.container-comparare-stil #btn-afiseaza-comparare {
+    background: #fff;
+    color: #7972c8;
+}
+
+/* bonus 5 - paginare */
+#paginare {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn-paginare {
+    background-color: #3a3a5c;
+    color: #eae6fd;
+    border: 2px solid #7972c8;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.btn-paginare:hover {
+    background-color: #7972c8;
+    color: white;
+}
+
+.btn-paginare.pagina-activa {
+    background-color: #7972c8;
+    color: white;
+    font-weight: bold;
+}
+
+/* bonus 14 - cel mai ieftin produs */
+.badge-ieftin {
+    background-color: #ffd700;
+    color: #000;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite; /* animatie */
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.produs.cel-mai-ieftin {
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* pentru ecran mic */
+@media screen and (max-width: 768px) {
+    .grid-produse {
+        grid-template-columns: 1fr;
+    }
+
+    .produs-continut {
+        flex-direction: column;
+    }
+
+    /* tabelul devine bloc vertical pe mobil */
+    .tabel-produs,
+    .tabel-produs tr,
+    .tabel-produs td,
+    .tabel-produs th {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* ascunde randul de heading (cel cu th) */
+    .tabel-produs tr:first-child {
+        display: none;
+    }
+
+    /* pune eticheta inainte de fiecare valoare */
+    .tabel-produs td {
+        padding: 6px 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .tabel-produs td::before {
+        font-weight: bold;
+        display: block;
+    }
+
+    .val-pret::before { content: "Preț:"; }
+    .val-platforma::before { content: "Platformă:"; }
+    .val-limbi::before { content: "Limbi:"; }
+    .val-multiplayer::before { content: "Multiplayer:"; }
+}

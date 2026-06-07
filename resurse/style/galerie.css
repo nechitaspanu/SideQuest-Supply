@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    counter-reset: grec;
+    counter-reset: grec; /* initializare contor */
     padding: 20px;
 }
 
@@ -12,7 +12,7 @@
     overflow: hidden;
     border: 2px solid var(--culoare-contur);
     background-color: white;
-    position: relative;   /* ← necesar pentru figcaption absolut */
+    position: relative;   /* necesar pentru figcaption absolut */
 }
 
 #galerie-grid-container figcaption::before {
@@ -23,7 +23,7 @@
 #galerie-grid-container img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: cover; /* asigura acoperirea completa a spatiului fara deformare */
     display: block;
     transition: filter 1.1s linear;
 }
@@ -44,8 +44,8 @@
 #galerie-grid-container figcaption {
     padding: 10px;
     text-align: center;
-    transform: scale(0);
-    transform-origin: center center;
+    transform: scale(0); /* ascunde textul initial */
+    transform-origin: center center; /* miscorarea transformarii din centru */
     transition: transform 1.1s linear;
 }
 
@@ -54,7 +54,7 @@
 }
 
 #galerie-grid-container figure:hover figcaption {
-    transform: scale(1);
+    transform: scale(1); /* cand mouse-ul este deasupra, textul apare */
 }
 
 @media screen and (max-width: 1000px) {

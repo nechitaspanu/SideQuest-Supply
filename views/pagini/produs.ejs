@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="description" content="Site gaming - jocuri video pentru PC si console.">
+        <meta name="keywords" content="gaming, jocuri, <%- locals.prod.nume %>, <%- locals.prod.gen %>">
+        
+        <title>Gaming - <%- locals.prod.nume %></title>
+        <%- include("../fragmente/head") %>
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+        <script src="/resurse/js/comparare.js"></script>
+    </head>
+    <body>
+        <%- include("../fragmente/header") %>
+        <main>
+            <section>
+                <h2>Pagină joc</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Preț: <span class="pret"><%- locals.prod.pret %> lei</span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %></span></p>
+                    <p>Gen: <span class="gen"><%- locals.prod.gen %></span></p>
+                    <p>Platformă: <span class="platforma"><%- locals.prod.platforma %></span></p>
+                    <p>Scor Metacritic: <span class="scor"><%- locals.prod.scor_metacritic %>/100</span></p>
+                    <p>PEGI: <span class="varsta"><%- locals.prod.varsta_minima %>+</span></p>
+                    <p>Limbi disponibile: <span class="limbi"><%- locals.prod.limbi_disponibile %></span></p>
+                    <p>Multiplayer online: <span class="multiplayer"><%- locals.prod.multiplayer_online ? 'Da' : 'Nu' %></span></p>
+                    <p>Data adăugare: <span class="data"><%- locals.prod.data_adaugare %></span></p>
+                    <figure class="imag-produs">
+                        <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>
+                    <button class="btn-compara" data-id="<%- prod.id %>" data-nume="<%- prod.nume %>">compară</button>
+                </article>
+            </section>
+        </main>
+        <%- include("../fragmente/footer") %>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>SideQuest Supply - Galerie </title> 
+    <meta name="description"
+        content="Istoric SideQuest Supply">
+    <meta name="keywords"
+        content="jocuri, consola, SideQuest Supply, scaune, gaming, tastatura, setup, periferice, Nintendo">
+
+    <%- include('../fragmente/head.ejs') %>
+
+</head>
+
+<body>
+    <header>
+        <h1 id="top">SideQuest Supply <i class="fa-solid fa-gamepad"></i></h1>
+        <img src="/resurse/imagini/sigla.png" alt="sigla" class="master-sword"/>
+
+    <%- include('../fragmente/header.ejs') %>
+    </header>
+
+    <main>
+       <div id="galerie-grid-container" class="grid-galerie">
+            <%  const vectLuni=["ianuarie","februarie","martie","aprilie","mai","iunie", "iulie","august","septembrie","octombrie","noiembrie","decembrie"]; 
+                const lunaCurenta=vectLuni[new Date().getMonth()];
+                let contor=0; 
+                if (locals.imagini) { 
+                    for (let imag of imagini) { 
+                        if (contor>= 12) break;
+                        if (imag.luni && imag.luni.includes(lunaCurenta)) {
+                %>
+                <figure>
+                    <picture>
+                        <source srcset="<%- cale %><%- imag.cale_fisier %>" media="(max-width:1100px)">
+                        <img src="<%- cale %><%- imag.cale_fisier %>" alt="<%- imag.alt ? imag.alt : imag.cale_fisier %>"
+                            title="<%- imag.text_descriere %>">
+                    </picture>
+                    <figcaption>
+                        <%- imag.text_descriere %>
+                    </figcaption>
+                </figure>
+                <% contor++; } } } %>
+        </div>
+
+        <section id="sectiune-galerie-animata">
+            <div class="galerie-animata">
+                <% for (let img of imaginiAnimate) { %>
+                    <figure>
+                        <img src="<%= img.cale_completa %>" alt="<%= img.titlu %>">
+                        <figcaption>
+                            <%= img.titlu %>
+                        </figcaption>
+                    </figure>
+                    <% } %>
+            </div>
+        </section>
+    </main>
+
+   <%- include('../fragmente/footer.ejs') %>
+</body>
+
+</html>

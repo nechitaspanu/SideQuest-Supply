@@ -1,6 +1,6 @@
 @use "../node_modules/bootstrap/scss/bootstrap" with (
     // culori de fundal pentru tema 1 
-    $primary: #7972c8, 
+    $primary: #b6b2d8, 
     $body-bg: #46445C,
 
     // culori pentru text
@@ -25,24 +25,214 @@
 
     // familia fontului
     $font-family-base: ("Montserrat", sans-serif),
-
-    // variabila aleasa
-    $danger: rgb(216, 164, 33),
     
     // distanta dintre elemente
     $spacer: 1.5rem 
 );
 
+.tema-blue-pink {
+    --culoare-fundal: #0c315a !important;
+    --culoare-contur: #0c315a  !important;
+    --culoare-grid: #006f82 !important;
+    --culoare-secundara: #f28b42 !important;
+    --culoare-text: #f0f0f0 !important;
+    --culoare-hover: #1a2f4a !important;
+    --culoare-vizitat: #f47f49 !important;
+    --c1: rgba(81, 225, 251, 0.2) !important;
+
+    background-color: var(--culoare-fundal) !important;
+    color: var(--culoare-secundara) !important;
+
+    // carduri produse
+    .produs {
+        background-color: #006f82 !important;
+        color: #f0f0f0 !important;
+    }
+
+    
+
+     // bulinele cu limbi (btn-outline-primary)
+    .btn-outline-primary {
+        color: #51e1fb !important;
+        border-color: #51e1fb !important;
+        background-color: #1a2f4a !important;
+
+        &:hover {
+            background-color: #51e1fb !important;
+            color: #0d1b2a !important;
+        }
+    }
+
+    // textarea si inputuri
+    .form-control, .form-select, textarea {
+        background-color: #1a2f4a !important;
+        color: #f0f0f0 !important;
+        border-color: #51e1fb !important;
+
+        &::placeholder {
+            color: #adb5bd !important;
+        }
+    }
+
+        // btn-check bifat - arata ca selectat
+        .btn-check:checked+.btn-outline-primary {
+            background-color: #51e1fb !important;
+            color: #0d1b2a !important;
+            border-color: #51e1fb !important;
+        }
+
+    // floating label
+    .form-floating>label {
+        color: #adb5bd !important;
+    }
+        
+    .form-floating>.form-control {
+        background-color: #1a2f4a !important;
+        color: #f0f0f0 !important;
+        border-color: #51e1fb !important;
+        
+    &::placeholder {
+        color: transparent !important; // ascunde placeholder-ul
+                    }
+    }
+    
+        // range slider
+    .form-range::-webkit-slider-thumb {
+        background-color: #51e1fb !important;
+    }
+    .form-range::-webkit-slider-runnable-track {
+        background-color: #f28b42 !important;
+    }
+    .form-range::-moz-range-thumb {
+        background-color: #51e1fb !important;
+    }
+    .form-range::-moz-range-track {
+        background-color: #1a2f4a !important;
+    }
+
+     .butoane-produs button {
+        border-color: #51e1fb !important;
+        color: #51e1fb !important;
+        background: none !important;
+
+        &:hover {
+            background-color: #51e1fb !important;
+            color: #0d1b2a !important;
+        }
+    }
+
+    // butonul pin activ
+    .btn-pin.activ {
+        background-color: #f28b42 !important;
+        color: #0d1b2a !important;
+        border-color: #f28b42 !important;
+    }
+
+    // produsul pinned
+    .produs.pinned {
+        border: 2px solid #f28b42 !important;
+        box-shadow: 0 0 10px rgba(242, 139, 66, 0.5) !important;
+    }
+
+    .btn-compara {
+        background-color: #51e1fb !important;
+        color: #0d1b2a !important;
+        border-color: #51e1fb !important;
+
+        &:hover:not(:disabled) {
+            background-color: #f28b42 !important;
+            border-color: #f28b42 !important;
+            color: #0d1b2a !important;
+        }
+
+        &:disabled {
+            background-color: #1a2f4a !important;
+            border-color: #1a2f4a !important;
+            color: #555 !important;
+        }
+    }
+
+    .container-comparare-stil {
+        background-color: #0d1b2a !important;
+        color: #f0f0f0 !important;
+        border: 2px solid #51e1fb !important;
+    }
+
+    .container-comparare-stil .btn-sterge-comparare {
+        background: #f28b42 !important;
+        color: #0d1b2a !important;
+    }
+
+    .container-comparare-stil #btn-afiseaza-comparare {
+        background: #51e1fb !important;
+        color: #0d1b2a !important;
+    }
+
+    // bonus 5 - paginare
+    .btn-paginare {
+        background-color: #1a2f4a !important;
+        color: #f0f0f0 !important;
+        border-color: #51e1fb !important;
+
+        &:hover, &.pagina-activa {
+            background-color: #51e1fb !important;
+            color: #0d1b2a !important;
+        }
+    }
+
+    // bonus 14 - cel mai ieftin produs 
+     .badge-ieftin {
+        background-color: #f28b42  !important;
+        color: #0d1b2a !important;
+    }
+
+    .produs.cel-mai-ieftin {
+        border-color: #f28b42 !important;
+        box-shadow: 0 0 15px rgba(242, 139, 66, 0.5) !important;
+    }
+
+    // pentru reflexie 
+     #text {
+        color: #f28b42!important;  
+    }
+
+    #text-reflectat {
+        color: #f28b42 !important;  
+    }
+}
+
+// butoane - border radius si grosime border
+.btn {
+    border-width: 2px;
+    border-radius: 1rem;
+}
+
+// range slider
+.form-range {
+    &::-webkit-slider-thumb {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #7972c8;
+        margin-top: -0.5rem;
+    }
+    &::-webkit-slider-runnable-track {
+        background-color: #9d99d4;
+    }
+    &::-moz-range-thumb {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #7972c8;
+    }
+    &::-moz-range-track {
+        background-color: #9d99d4;
+    }
+}
+
 // daca bootstrap a stricat ceva, le rescriu aici
 // link-uri neschimbate
 a {
     text-decoration: none;
-    font-weight: inherit;
-}
-
-.card-personalizat {
-    @extend .card;
-    border: 2px solid bootstrap.$primary;
+    font-weight: inherit; // mosteneste font-weight-ul parintelui
 }
 
 // tema 2
@@ -52,7 +242,7 @@ a {
 
     // heading-uri
     h1, h2, h3, h4, h5, h6 {
-        color: #fb518ce3 !important;
+        color: #f28b42 !important;
     }
 
     // link-uri
@@ -60,21 +250,21 @@ a {
         color: #51e1fbe9 !important;
 
         &:hover {
-            color: #fb518ce3 !important;
+            color: #f28b42 !important;
         }
     }
 
     // navbar
     .navbar {
         background-color: #0a1628 !important;
-        border-bottom: 2px solid #fb518ce3;
+        border-bottom: 2px solid #f28b42;
 
         .navbar-brand,
         .nav-link {
             color: #f0f0f0 !important;
 
             &:hover {
-                color: #fb518ce3 !important;
+                color: #f28b42 !important;
             }
         }
     }
@@ -86,46 +276,19 @@ a {
         color: #ffffff !important;
 
         &:hover {
-            background-color: #fb518ce3 !important;
-            border-color: #fb518ce3 !important;
+            background-color: #f28b42 !important;
+            border-color: #f28b42 !important;
         }
     }
 
     .btn-secondary {
-        background-color: #fb518ce3 !important;
-        border-color: #fb518ce3 !important;
+        background-color: #f28b42 !important;
+        border-color: #f28b42 !important;
         color: #ffffff !important;
 
         &:hover {
             background-color: #51e1fbe9!important;
             border-color: #51e1fbe9 !important;
-        }
-    }
-
-    // carduri
-    .card {
-        background-color: #112240 !important;
-        border: 2px solid #51e1fbe9 !important;
-        color: #f0f0f0 !important;
-
-        .card-title {
-            color: #fb518ce3 !important;
-        }
-    }
-
-    .card-personalizat {
-        border: 2px solid #ff2d78 !important;
-    }
-
-    // inputs
-    input, textarea, select {
-        background-color: #112240 !important;
-        color: #f0f0f0 !important;
-        border: 1px solid #51e1fbe9 !important;
-
-        &:focus {
-            border-color: #ff2d78 !important;
-            box-shadow: 0 0 0 0.2rem rgba(255, 45, 120, 0.35) !important;
         }
     }
 
